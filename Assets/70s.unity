@@ -2331,7 +2331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2e44afdb463be4e8cb60340de9cc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabPinch: {fileID: 11400000, guid: 465dca9eae1f22642bf316d68fd6f761, type: 2}
   moveSpeed: 1
   interacting: 0
 --- !u!1 &133139602
@@ -30863,15 +30862,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4181587887694890, guid: 5d047776f1bfb0645adf99cf5c4f56b5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.634
       objectReference: {fileID: 0}
     - target: {fileID: 4181587887694890, guid: 5d047776f1bfb0645adf99cf5c4f56b5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.742
       objectReference: {fileID: 0}
     - target: {fileID: 4181587887694890, guid: 5d047776f1bfb0645adf99cf5c4f56b5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.182
       objectReference: {fileID: 0}
     - target: {fileID: 4181587887694890, guid: 5d047776f1bfb0645adf99cf5c4f56b5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -31713,6 +31712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0c4d8dbbe4e2249b66f8f67a98f3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactScript: {fileID: 125781894}
   maxHealth: 1000
   text: {fileID: 58701173}
 --- !u!65 &1950124872

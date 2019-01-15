@@ -27,7 +27,7 @@ public class movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(hand.handType));
+        //Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(hand.handType));
 
         bool move = SteamVR_Input._default.inActions.Teleport.GetState(hand.handType);
         if (move)
