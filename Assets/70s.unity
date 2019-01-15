@@ -2315,6 +2315,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013914614588, guid: e7af05fa230061c4da07e8ceda602506,
     type: 2}
   m_PrefabInternal: {fileID: 116368373}
+--- !u!1 &125781892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134582366924314, guid: 5d047776f1bfb0645adf99cf5c4f56b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1872904386}
+--- !u!114 &125781894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125781892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2e44afdb463be4e8cb60340de9cc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPinch: {fileID: 11400000, guid: 465dca9eae1f22642bf316d68fd6f761, type: 2}
+  moveSpeed: 1
+  interacting: 0
 --- !u!1 &133139602
 GameObject:
   m_ObjectHideFlags: 0
@@ -19996,6 +20015,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.7071068
       objectReference: {fileID: 0}
+    - target: {fileID: 1060585310108436, guid: 4fabbd7a639082b43a448f6f8b5ec40a, type: 2}
+      propertyPath: m_TagString
+      value: Smoker
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114456684301589812, guid: 4fabbd7a639082b43a448f6f8b5ec40a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 4fabbd7a639082b43a448f6f8b5ec40a, type: 2}
@@ -34289,7 +34312,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4133299898020986, guid: 5d047776f1bfb0645adf99cf5c4f56b5,
     type: 2}
   m_PrefabInternal: {fileID: 1872904386}
---- !u!114 &2123205899
+--- !u!114 &2123205898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34297,7 +34320,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123205895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f7aa2eef713b904d8e3cc0ec99bd7af, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e062a0230ca4614f993d524a4837965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1

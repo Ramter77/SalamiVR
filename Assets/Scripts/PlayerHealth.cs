@@ -16,13 +16,14 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("Player Health: " + health);
+		//Debug.Log("Player Health: " + health);
 
         //Heal();
 
-        text.text = "Health: \n" + health.ToString();
 
-
+		if (health > 0 && health <= maxHealth) {
+			text.text = "Health: \n" + health.ToString();
+		}
     }
 
 	public void Heal() {
@@ -36,4 +37,9 @@ public class PlayerHealth : MonoBehaviour {
 			health--;
 		}		
 	}
+
+
+
+	//Health display value
+	//healthbarValue = RoundToInt(health / maxHealth);
 }
