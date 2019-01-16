@@ -18,7 +18,7 @@ public class Dialog : MonoBehaviour {
 	}
 	
 	//If player enters collider interact
-	private void OnTriggerEnter(Collider other) {
+	private void OnTriggerStay(Collider other) {
         //if colliding with Player collider		
         if (other.tag == "Head")
         {

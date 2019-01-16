@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	//This script handles the players health, displays it to the UI, adjusts the tunneling effect,
 	//Heals, takes damage from smoke, coughs
 
-	private Tunnelling tunnellingScript;
+	private TunnellingOpaque tunnellingScript;
 
 	[Header ("Health")]
 	public static float healthPct;
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour {
     void Start () {
 		health = maxHealth;
 
-		tunnellingScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Tunnelling>();
+		tunnellingScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TunnellingOpaque>();
 	}
 	
 	void Update () {
@@ -32,9 +32,12 @@ public class PlayerHealth : MonoBehaviour {
 
 	void AdjustTunneling() {
 		//Change effect feather of tunnel
-		tunnellingScript.effectFeather = 0.1f + (((float)health / (float)maxHealth) / 1000);
-		Debug.Log(tunnellingScript.effectFeather);
-	}
+		tunnellingScript.effectFeather = 0.1f + (((float)health / (float)maxHealth) / 10);
+        tunnellingScript.angularVelocityStrength = 2 - ((float)health / (float)maxHealth);
+        tunnellingScript.velocityStrength = 2 - ((float)health / (float)maxHealth);
+
+        //Debug.Log(tunnellingScript.effectFeather);
+    }
 
 	void DisplayHealth() {
 		if (health > 0 && health <= maxHealth) {

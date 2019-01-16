@@ -6,19 +6,14 @@ public class Cigarette : MonoBehaviour {
 
 	public Material mLightMaterial;
 
-	private float mMin =  0.5f;
-	private float mMax = 1.25f;
+	public float mMin = 0.1f;
+	public float mMax = 1f;
 
-
-	// Use this for initialization
 	void Start () {
 		SetLightColor(mMin);
 	}
 
 	public IEnumerator Drag(Head head) {
-		//GetComponentInChildren<ParticleSystem>().Play();
-		//yield return null;
-
 		
 		float emission = mMin;
 		float time = 0;

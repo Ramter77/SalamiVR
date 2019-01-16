@@ -124,9 +124,9 @@ public class Head : MonoBehaviour {
         //float sum = Sum(samples);
         //float averageSample = (float)(sum / samples.Length) * 10000;
 
-        Debug.Log(samples);
+        //Debug.Log(samples);
 
-        float averageSample = Average(samples) * 1000000;
+        float averageSample = Average(samples) * 100000;
 
         Debug.Log("samples: " + averageSample);
 
@@ -136,7 +136,7 @@ public class Head : MonoBehaviour {
         isInput = averageSample > mThreshold ? true: false;
         //bool isInput = audioSource < mThreshold ? true: false;
 
-        Debug.Log("isInput: " + isInput);
+        //Debug.Log("isInput: " + isInput);
 		return isInput;
 	}
 
