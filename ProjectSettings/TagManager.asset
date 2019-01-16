@@ -9,6 +9,8 @@ TagManager:
   - Cigarette
   - Smoker
   - Head
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,11 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Movement : MonoBehaviour {
+    //This script handles movement and footstep sounds
+
     public float moveSpeed = 1;
 
-    private Hand hand;
+    private Hand leftHand;
     //private SteamVR_Camera headCamera;
     private Transform headCamera;
 
@@ -21,7 +23,7 @@ public class Movement : MonoBehaviour {
     private float stepTimer; 
 
 	void Awake () {
-        hand = GetComponent<Hand>();
+        leftHand = GetComponent<Hand>();
 
         //headCamera = transform.parent.GetComponentInChildren<SteamVR_Camera>();
 
@@ -30,15 +32,20 @@ public class Movement : MonoBehaviour {
         //headCamera = transform.root.Find("Head");
         Debug.Log("Found camera: " + headCamera);
 	}
+
+    void Move() {
+        Vector3 forwardM = new Vector3(headCamera.forward.x, 0f, headCamera.forward.z);
+        transform.root.position += forwardM * moveSpeed * Time.deltaTime;
+    }
 	
 	void Update () {
-        //Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(hand.handType));
+        //Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType));
 
-        bool move = SteamVR_Input._default.inActions.Teleport.GetState(hand.handType);
+        bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
         if (move) {
             //MOVE
-            Vector3 forwardM = new Vector3(headCamera.forward.x, 0f, headCamera.forward.z);
-            transform.root.position += forwardM * moveSpeed * Time.deltaTime;
+            Move();
+            
 
             //First Step SOUND
             /*

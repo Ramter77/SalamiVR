@@ -5,55 +5,43 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Dialog : MonoBehaviour {
-	public InteractSmoker _interactScript;
-	public Hand hand;
-	
-	private void OnTriggerEnter(Collider other) {
-        //if colliding with Smoker tagged triggered collider set interacting bool
-        //if (other.tag == "Smoker") {
-            //interacting = true;
-        //}
-        //else {
-            //interacting = false;
-        //}
+	//This script handles the dialog interaction
 
-		//if (other.tag == "Head") {
-		//	_interactScript.interacting = true;
-		//}
+	public Hand rightHand;
 
-
-
-
-
-
-
-
-
-
-
-
-		/*
-		//if player collides with triggered smoker collider
-
-
-
-		
-			//if pressing the button
-			if (SteamVR_Input._default.inActions.Teleport.GetState(hand.handType)) {
-                Debug.Log("Interact!!");
-
-                disable collider so you can only do it once
-
-				play sound file and stop
-            }
-		 */
-    }
-
-	private void OnTriggerExit(Collider other) {
-		if (other.tag == "Head") {
-			_interactScript.interacting = false;
-
-			//executeDialog(name of smoker gameObject);
+	private void Start() {
+		if (rightHand == null) {
+			
+			//GameObject player = GameObject.FindGameObjectWithTag("Player");
+			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand
 		}
+	}
+	
+	//If player enters collider interact
+	private void OnTriggerEnter(Collider other) {
+        //if colliding with Player collider		
+        if (other.tag == "Head")
+        {
+			Debug.Log("-------// Colliding with player //-------------");
+			//if player presses the interaction button
+			if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
+				Debug.Log("----------------------------Interact-------------------------");
+
+				//disable collider so you can only do it once
+
+				//play sound file and stop
+			}
+        }
     }
+
+	/*
+    private void OnTriggerExit(Collider other)
+    {
+        //If player exits collider stop interacting
+        if (other.tag == "Head")
+        {
+            _interactScript.interacting = false;
+        }
+    }
+	*/
 }

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class smokingLoop : MonoBehaviour {
-
-    [Tooltip ("Reference to the interaction script")]
-    public InteractSmoker _interactScript;
+    //This script only emits smoke in a loop and plays the in/exhale sounds
 
     private ParticleSystem pS;
 
@@ -24,8 +22,19 @@ public class smokingLoop : MonoBehaviour {
 
 	void Smoke() {
 		pS.Play();
+        //Play exhale sound
+
+        //wait some seconds and then play inhale sound
 	}
 
+
+
+
+
+
+
+
+/*
     private void OnTriggerEnter(Collider other)
     {
         //If player enters collider interact
@@ -43,4 +52,5 @@ public class smokingLoop : MonoBehaviour {
             _interactScript.interacting = false;
         }
     }
+    */
 }
