@@ -70,6 +70,8 @@ namespace Valve.VR.InteractionSystem
         public bool isHovering { get; protected set; }
         public bool wasHovering { get; protected set; }
 
+        public static bool isHoveringUI;
+
         private void Start()
         {
             highlightMat = (Material)Resources.Load("SteamVR_HoverHighlight", typeof(Material));
@@ -203,6 +205,7 @@ namespace Valve.VR.InteractionSystem
 
         private void HandHoverUpdate()
         {
+           
             if (highlightOnHover == true)
             {
                 if (wasHovering == false)
