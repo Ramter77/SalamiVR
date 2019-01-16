@@ -5,9 +5,15 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Dialog : MonoBehaviour {
-	//This script handles the dialog interaction
+	//This script handles the dialog interaction (the initial sound that plays when the player collides with the
+	//triggered collider and then presses the corresponding button)
 
+	public float delayTime;
 	public Hand rightHand;
+
+	[Header ("Sound")]
+	public AudioClip clip;
+    private AudioSource sound;
 
 	private void Start() {
 		if (rightHand == null) {
@@ -27,21 +33,12 @@ public class Dialog : MonoBehaviour {
 			if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
 				Debug.Log("----------------------------Interact-------------------------");
 
-				//disable collider so you can only do it once
+				sound.clip = clip;
+				sound.PlayOneShot(sound.clip);	//play sound file
 
-				//play sound file and stop
+				gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
+				gameObject.GetComponent<smokingLoop>().restartSmoking(delayTime);	//restart smoking after delay
 			}
         }
     }
-
-	/*
-    private void OnTriggerExit(Collider other)
-    {
-        //If player exits collider stop interacting
-        if (other.tag == "Head")
-        {
-            _interactScript.interacting = false;
-        }
-    }
-	*/
 }

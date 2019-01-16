@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cigarette : MonoBehaviour {
+	//This script handles the emissive material over time on the cigarette
 
+	[Header ("Material properties")]
 	public Material mLightMaterial;
-
 	public float mMin = 0.1f;
 	public float mMax = 1f;
 
@@ -13,8 +14,7 @@ public class Cigarette : MonoBehaviour {
 		SetLightColor(mMin);
 	}
 
-	public IEnumerator Drag(Head head) {
-		
+	public IEnumerator Drag(Head head) {		
 		float emission = mMin;
 		float time = 0;
 
@@ -29,8 +29,7 @@ public class Cigarette : MonoBehaviour {
 			//Set
 			SetLightColor(emission);
 			yield return null;
-		}
-		
+		}		
 	}
 
 	private void SetLightColor(float emission) {

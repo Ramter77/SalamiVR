@@ -3,54 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class smokingLoop : MonoBehaviour {
-    //This script only emits smoke in a loop and plays the in/exhale sounds
+    //This script handles emitting smoke in a loop and plays the in/exhale sounds
 
     private ParticleSystem pS;
 
 	[Header ("Cooldown")]
-	public int startCD = 1;
+    public float startDelay;
 	public int minCD = 10;
 	public int maxCD = 15;
+
+    [Header ("Sounds")]
+    public AudioClip inhaleClip;
+    public AudioClip exhaleClip;
+    private AudioSource sound;
+    public float inhaleDelay;
 
 	void Start () {
 		pS = GetComponentInChildren<ParticleSystem>();
 
-		float rnd = Random.Range(minCD, maxCD);
-
-		InvokeRepeating("Smoke", startCD, rnd);		//call Smoke() after <startCD> seconds every <minCD-maxCD> seconds
+		restartSmoking(startDelay);
 	}
+
+    public void restartSmoking(float delay) {
+        float rnd = Random.Range(minCD, maxCD);
+        InvokeRepeating("Smoke", delay, rnd);		//call Smoke() after <startCD> seconds every <minCD-maxCD> seconds
+    }
+
+    public void StopSmoking() {
+        CancelInvoke();
+    }
 
 	void Smoke() {
 		pS.Play();
-        //Play exhale sound
+
+        sound.clip = exhaleClip;
+		sound.PlayOneShot(sound.clip);	//play exhale sound
 
         //wait some seconds and then play inhale sound
+        StartCoroutine(inhaleSound());
 	}
 
-
-
-
-
-
-
-
-/*
-    private void OnTriggerEnter(Collider other)
-    {
-        //If player enters collider interact
-        if (other.tag == "Head")
-        {
-            _interactScript.interacting = true;
-        }
+    IEnumerator inhaleSound() {
+        yield return new WaitForSeconds(inhaleDelay);
+        
+        sound.clip = inhaleClip;
+		sound.PlayOneShot(sound.clip);	//play inhale sound
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        //If player exits collider stop interacting
-        if (other.tag == "Head")
-        {
-            _interactScript.interacting = false;
-        }
-    }
-    */
 }

@@ -8,28 +8,20 @@ public class Movement : MonoBehaviour {
     //This script handles movement and footstep sounds
 
     public float moveSpeed = 1;
-
     private Hand leftHand;
-    //private SteamVR_Camera headCamera;
     private Transform headCamera;
 
-
-    [Header ("Audio")]
+    [Header ("Sound")]
     [Tooltip ("Step sound cooldown")]
     public float stepCD;
-    public AudioSource sound;
+    public AudioSource playerSound;
     public AudioClip stepsSound;
     private bool firstStep;
     private float stepTimer; 
 
 	void Awake () {
         leftHand = GetComponent<Hand>();
-
-        //headCamera = transform.parent.GetComponentInChildren<SteamVR_Camera>();
-
         headCamera = transform.parent.Find("VRCamera");
-
-        //headCamera = transform.root.Find("Head");
         Debug.Log("Found camera: " + headCamera);
 	}
 
@@ -37,41 +29,42 @@ public class Movement : MonoBehaviour {
         Vector3 forwardM = new Vector3(headCamera.forward.x, 0f, headCamera.forward.z);
         transform.root.position += forwardM * moveSpeed * Time.deltaTime;
     }
-	
-	void Update () {
-        //Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType));
 
-        bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
-        if (move) {
-            //MOVE
-            Move();
-            
+    void MoveSound() {
+        //First Step SOUND
+        /*
+        if (firstStep) {
+            sound.clip = stepsSound;
+            sound.PlayOneShot(sound.clip);
+            firstStep = false;
+        }
+        */
 
-            //First Step SOUND
-            /*
-            if (firstStep) {
-                sound.clip = stepsSound;
-                sound.PlayOneShot(sound.clip);
-                firstStep = false;
-            }
-            */
-
-            //Step SOUND
-            if (stepTimer <= 0) {
-                sound.clip = stepsSound;
-                sound.loop = true;
-                sound.PlayOneShot(sound.clip);
-                stepTimer = stepCD;
-            }
-            else {
-                stepTimer -= Time.deltaTime;
-            }
+        //Step SOUND
+        if (stepTimer <= 0) {
+            playerSound.clip = stepsSound;
+            playerSound.loop = true;
+            playerSound.PlayOneShot(playerSound.clip);
+            stepTimer = stepCD;
         }
         else {
-            sound.loop = false;
-            if (sound.clip == stepsSound && sound.isPlaying)
+            stepTimer -= Time.deltaTime;
+        }
+    }
+	
+	void Update () {
+
+        //MOVE
+        bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
+        if (move) {            
+            Move();
+            MoveSound();            
+        }
+        else {  //stop sound
+            playerSound.loop = false;
+            if (playerSound.clip == stepsSound && playerSound.isPlaying)
             {
-                sound.Stop();                
+                playerSound.Stop();                
             }
         }
 	}
