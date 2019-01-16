@@ -6,21 +6,12 @@ public class smokeCollision : MonoBehaviour {
 
     public PlayerHealth _playerHealth;
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerHealth = player.GetComponent<PlayerHealth>();
     }
 
-
-	/// <summary>
-	/// OnParticleTrigger is called when any particles in a particle system
-	/// meet the conditions in the trigger module.
-	/// </summary>
     void OnParticleTrigger()
     {
         ParticleSystem ps = GetComponent<ParticleSystem>();
@@ -33,17 +24,18 @@ public class smokeCollision : MonoBehaviour {
         int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
         int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
 
-        // iterate
+        // iterate over entering
         for (int i = 0; i < numEnter; i++)
         {
             ParticleSystem.Particle p = enter[i];
             p.startColor = new Color32(255, 0, 0, 255);
             enter[i] = p;
 
-			Debug.Log("Smoke particle collided with player");
+			//Debug.Log("Smoke particle collided with player");
 
             _playerHealth.Damage();
         }
+        // iterate over exiting
         for (int i = 0; i < numExit; i++)
         {
             ParticleSystem.Particle p = exit[i];

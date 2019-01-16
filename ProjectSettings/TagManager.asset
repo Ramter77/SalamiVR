@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Cigarette
   - Smoker
+  - Head
   layers:
   - Default
   - TransparentFX

@@ -8,10 +8,7 @@ public class interaction : MonoBehaviour {
 	//public SteamVR_Action_Boolean action;
 
 
-    
-    public float moveSpeed = 1;
-
-    public bool interacting = false;
+    public bool interacting;
 
     private Hand hand;
 

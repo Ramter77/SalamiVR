@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class smokingLoop : MonoBehaviour {
 
-	private ParticleSystem pS;
+    [Tooltip ("Reference to the interaction script")]
+    public interaction _interactScript;
+
+    private ParticleSystem pS;
 
 	[Header ("Cooldown")]
 	public int startCD = 1;
@@ -16,10 +19,28 @@ public class smokingLoop : MonoBehaviour {
 
 		float rnd = Random.Range(minCD, maxCD);
 
-		InvokeRepeating("Smoke", startCD, rnd);		//called after 5 seconds every 10-15 seconds
+		InvokeRepeating("Smoke", startCD, rnd);		//call Smoke() after <startCD> seconds every <minCD-maxCD> seconds
 	}
 
 	void Smoke() {
 		pS.Play();
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //If player enters collider interact
+        if (other.tag == "Head")
+        {
+            _interactScript.interacting = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //If player exits collider stop interacting
+        if (other.tag == "Head")
+        {
+            _interactScript.interacting = false;
+        }
+    }
 }
