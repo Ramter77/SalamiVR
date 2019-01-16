@@ -4,11 +4,13 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class interaction : MonoBehaviour {
+public class InteractSmoker : MonoBehaviour {
 	//public SteamVR_Action_Boolean action;
 
 
-    public bool interacting;
+    
+
+    public bool interacting = false;
 
     private Hand hand;
 
@@ -18,8 +20,6 @@ public class interaction : MonoBehaviour {
 	
 	void Update () {
         //if in triggered collider
-
-
         if (interacting)
         {
             Debug.Log("Doneffffffffffffffffffffffffffffffff");
@@ -37,5 +37,14 @@ public class interaction : MonoBehaviour {
         //Debug.Log(SteamVR_Input._default.inActions.GrabGrip.GetState(hand.handType));
 	}
 
+
+    //make a function here that plays a certain sound depending on the given name of the confronted smoker
+    //void executeDialog(name of smoker) {
+        //if name == jan
+        //  play jan dialog
+    //}
+
+    //OR
+    //just make a prefab for each guy and then just play his dialog
     
 }

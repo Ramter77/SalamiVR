@@ -5,7 +5,7 @@ using UnityEngine;
 public class smokingLoop : MonoBehaviour {
 
     [Tooltip ("Reference to the interaction script")]
-    public interaction _interactScript;
+    public InteractSmoker _interactScript;
 
     private ParticleSystem pS;
 

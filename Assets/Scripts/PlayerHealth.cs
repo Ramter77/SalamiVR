@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
+	public InteractSmoker _interactScript;
 
-
-	public interaction interactScript;
-    public static float healthPct;
-    public static float health;
+	[Header ("Health")]
+	public static float healthPct;
+	public static float health;
 	public float maxHealth = 1000;
     public Text text;
 
@@ -42,11 +42,9 @@ public class PlayerHealth : MonoBehaviour {
         }		
 	}
 
+	public void Cough() {
+		//Cough timer depends on health
+	}
 
-
-
-
-
-	//Health display value
-	//healthbarValue = RoundToInt(health / maxHealth);
+	//public void IncreaseTunnel()		decrease FOV with Vignette
 }
