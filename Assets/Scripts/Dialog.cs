@@ -8,8 +8,8 @@ public class Dialog : MonoBehaviour {
 	//This script handles the dialog interaction (the initial sound that plays when the player collides with the
 	//triggered collider and then presses the corresponding button)
 
-	public float delayTime;
-	public Hand rightHand;
+	public float smokingDelay;
+	private Hand rightHand;
 
 	[Header ("Sound")]
 	public AudioClip clip;
@@ -39,7 +39,7 @@ public class Dialog : MonoBehaviour {
 				sound.PlayOneShot(sound.clip);	//play sound file
 
 				gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
-				gameObject.GetComponent<smokingLoop>().restartSmoking(delayTime);	//restart smoking after delay
+				gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
 			}
         }
     }

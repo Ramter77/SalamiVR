@@ -15,7 +15,7 @@ public class smokingLoop : MonoBehaviour {
     [Header ("Sounds")]
     public AudioClip inhaleClip;
     public AudioClip exhaleClip;
-    public AudioSource sound;
+    private AudioSource sound;
     public float inhaleDelay;
 
 	void Start () {
@@ -23,9 +23,7 @@ public class smokingLoop : MonoBehaviour {
 
         sound = GetComponent<AudioSource>();
 
-        restartSmoking(startDelay);
-
-        
+        restartSmoking(startDelay);        
 	}
 
     public void restartSmoking(float delay) {
