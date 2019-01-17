@@ -70,7 +70,7 @@ public class PlayerHealth : MonoBehaviour {
             coughTimer -= Time.deltaTime;
         }
 
-		Debug.Log("Cough Cooldown: " + coughCD);
+		//Debug.Log("Cough Cooldown: " + coughCD);
 	}
 
 	void DisplayHealth() {

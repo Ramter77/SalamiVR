@@ -20,6 +20,8 @@ public class Dialog : MonoBehaviour {
 			
 			//GameObject player = GameObject.FindGameObjectWithTag("Player");
 			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand
+
+			sound = GetComponent<AudioSource>();
 		}
 	}
 	

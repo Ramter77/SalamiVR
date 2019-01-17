@@ -15,7 +15,7 @@ public class smokingLoop : MonoBehaviour {
     [Header ("Sounds")]
     public AudioClip inhaleClip;
     public AudioClip exhaleClip;
-    private AudioSource sound;
+    public AudioSource sound;
     public float inhaleDelay;
 
 	void Start () {
