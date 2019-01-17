@@ -21,7 +21,11 @@ public class smokingLoop : MonoBehaviour {
 	void Start () {
 		pS = GetComponentInChildren<ParticleSystem>();
 
-		restartSmoking(startDelay);
+        sound = GetComponent<AudioSource>();
+
+        restartSmoking(startDelay);
+
+        
 	}
 
     public void restartSmoking(float delay) {
