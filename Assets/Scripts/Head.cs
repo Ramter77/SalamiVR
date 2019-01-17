@@ -94,6 +94,8 @@ public class Head : MonoBehaviour {
         }
         //play corresponding sound
         playerSound.PlayOneShot(playerSound.clip);	//play inhale sound
+
+        Debug.Log("Play smoke Sound");
     }
 
     public float Sum(params float[] array)

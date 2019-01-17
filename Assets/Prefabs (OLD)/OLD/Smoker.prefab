@@ -169,9 +169,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d303df12262d46944bd64bd26b3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCD: 1
+  startDelay: 0
   minCD: 5
   maxCD: 5
+  inhaleClip: {fileID: 0}
+  exhaleClip: {fileID: 0}
+  inhaleDelay: 0
 --- !u!114 &114817034903932230
 MonoBehaviour:
   m_ObjectHideFlags: 1

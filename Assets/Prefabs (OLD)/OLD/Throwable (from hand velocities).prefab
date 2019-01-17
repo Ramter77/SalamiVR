@@ -380,6 +380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLightMaterial: {fileID: 2100000, guid: 7b01594739af853469be5f2d847b5df1, type: 2}
+  mMin: 0.1
+  mMax: 1
 --- !u!114 &114678350184441152
 MonoBehaviour:
   m_ObjectHideFlags: 1
