@@ -41,16 +41,38 @@ public class Dialog : MonoBehaviour {
         }
     }
 
-    //PLAY CORRESPONDING DIALOG
+    //PLAY CORRESPONDING DIALOG on clicking the seperate UI options
 	public void playDialog(int number) {
-		//if (sound.isPlaying) {
-            if (sound.clip != dialogClip[number])
+        //if (sound.isPlaying) {
+
+        /*
+        //Debug.Log(sound.clip != dialogClip[0]);
+        if (sound.clip != dialogClip[number]) {
+            if (!sound.isPlaying)
             {
+
+
                 sound.clip = dialogClip[number];
                 sound.PlayOneShot(sound.clip);  //play dialog file
             }
-		//}
-	}
+        }
+        */
+
+        if (sound.clip != dialogClip[0])
+        {
+            sound.clip = dialogClip[0];
+            sound.PlayOneShot(sound.clip);  //play dialog file
+        }
+        else
+        {
+            if (!sound.isPlaying)
+            {
+                sound.clip = dialogClip[0];
+                sound.PlayOneShot(sound.clip);  //play dialog file
+            }
+        }
+        //}
+    }
 	
 	//If player enters collider interact
 	private void OnTriggerStay(Collider other) {
@@ -67,23 +89,47 @@ public class Dialog : MonoBehaviour {
             if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
 				Debug.Log("----------------------------Interact-------------------------");
 
+                /*
 				if (!sound.isPlaying) {
 					sound.clip = dialogClip[0];
 					sound.PlayOneShot(sound.clip);	//play dialog file
 				}
+                */
 
-				gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
-				gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
+                //if in/exhaling
+                if (sound.clip != dialogClip[0])
+                {
+                    sound.clip = dialogClip[0];
+                    sound.PlayOneShot(sound.clip);  //play dialog file
+                }
+                else
+                {
+                    if (!sound.isPlaying)
+                    {
+                        sound.clip = dialogClip[0];
+                        sound.PlayOneShot(sound.clip);  //play dialog file
+                    }
+                }
+                
+
+                gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
+                //gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
 
 
 
-				//Activate objective on UI
-				if (transform.parent.name == "Mother") {
+                //Activate objective on UI
+                if (transform.parent.name == "Mother") {
                     //execute public function on UI which makes the objective text appear
                     UIController.AddObjective("Mother");
 					Debug.Log("Pass the cigarettes objective activated");
 				}
-			}
+                else if (transform.parent.name == "Hubrecht Breukers")
+                {
+                    //execute public function on UI which makes the objective text appear
+                    UIController.AddObjective("Hubrecht Breukers");
+                    Debug.Log("Bring Whiskey");
+                }
+            }
         }
     }
 }

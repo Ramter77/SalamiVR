@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour {
     public bool isCompleted = false;
 
     private PlaySong radioScript;
-    public Text objectiveText; 
+    public Text objectiveText;
 
+    //UI controller script
+    public UIController UIController;
 
     [Header("Tassio Booleans")]
     [Tooltip ("How many cigarette have to be distributed")]
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+
         }
     }
  
@@ -38,10 +41,11 @@ public class GameManager : MonoBehaviour {
         distributedCigarettes++;
         if (distributedCigarettes > leftCigarettes) {
             //Execute public function on UI here that makes the objective text disappear
-            //UI.removeObjective(name);
+            
 
             //completed objective
             CompleteObjective();
+            UIController.RemoveObjective();
         }
     }
 
@@ -58,11 +62,10 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start () {
-        /*
-        if (UIscript == null) {
-            radioScript = GameObject.FindGameObjectWithTag("UI").GetComponent<PlaySong>();
+        
+        if (UIController == null) {
+            UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
         }
-        */
         
         if (radioScript == null)
         {

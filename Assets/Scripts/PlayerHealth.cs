@@ -32,7 +32,9 @@ public class PlayerHealth : MonoBehaviour {
 		tunnellingScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TunnellingOpaque>();
 
         healthIndicatorScript = GetComponentInChildren<HealthIndicator>();
-	}
+
+        h = StartCoroutine(Heal(1));    //heal every second
+    }
 
 	//-----------------------------------------ALWAYS------------------------------------------//
 	
@@ -40,20 +42,20 @@ public class PlayerHealth : MonoBehaviour {
         //Debug.Log("Player Health: " + health);
 
         //ALWAYS DO:
-        //Heal();
-        h = StartCoroutine(Heal(1));    //heal every second
+        //Heal();           
         Cough();
 		DisplayHealth();
     }
 
     IEnumerator Heal(int repeat)
     {
-        yield return new WaitForSeconds(repeat);
         if (health < maxHealth)
         {
             health++;       //heal 1 health each <repeat:
             StopCoroutine(h);
         }
+        yield return new WaitForSeconds(repeat);
+        StartCoroutine(Heal(1));
     }
 
     /*
@@ -100,10 +102,12 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void UpdateHealth() {
-		healthPct = (float)health / (float)maxHealth;
+		healthPct = (float)health / (float)maxHealth; 
 
         //Adjust cough CD
-        coughCD = coughCD / healthPct;
+        //Debug.Log(healthPct);
+        coughCD = (1 + healthPct * 600) + 60;
+        Debug.Log(coughCD);
 
         healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 	}
