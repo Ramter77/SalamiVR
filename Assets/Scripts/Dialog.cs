@@ -12,16 +12,22 @@ public class Dialog : MonoBehaviour {
 	private Hand rightHand;
 
 	[Header ("Sound")]
-	public AudioClip clip;
+	//public AudioClip dialogClip;
+	public AudioClip[] dialogClip;
     private AudioSource sound;
 
 	private void Start() {
 		if (rightHand == null) {
-			
 			//GameObject player = GameObject.FindGameObjectWithTag("Player");
-			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand
+			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand			
+		}
+		sound = GetComponent<AudioSource>();
+	}
 
-			sound = GetComponent<AudioSource>();
+	public void playDialog(int number) {
+		if (!sound.isPlaying) {
+			sound.clip = dialogClip[number];
+			sound.PlayOneShot(sound.clip);	//play dialog file
 		}
 	}
 	
@@ -35,11 +41,21 @@ public class Dialog : MonoBehaviour {
 			if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
 				Debug.Log("----------------------------Interact-------------------------");
 
-				sound.clip = clip;
-				sound.PlayOneShot(sound.clip);	//play sound file
+				if (!sound.isPlaying) {
+					sound.clip = dialogClip[0];
+					sound.PlayOneShot(sound.clip);	//play dialog file
+				}
 
 				gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
 				gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
+
+
+
+				//Activate objective on UI
+				if (transform.parent.name == "Mother") {
+					//execute public function on UI which makes the objective text appear
+					Debug.Log("Pass the cigarettes objective activated");
+				}
 			}
         }
     }

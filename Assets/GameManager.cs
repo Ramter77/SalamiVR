@@ -8,6 +8,26 @@ public class GameManager : MonoBehaviour {
     public static int CurrentObjective = 1; //radio, level 1
     public static bool isCompleted = false;
 
+
+
+
+
+    [Header ("Tassio Booleans")]
+    public int distributedCigarettes;
+    public void incrementCigarette() {
+        if (distributedCigarettes > 2) {
+            //completed objective
+            //Execute public function on UI here that makes the objective text disappear
+        }
+        else {
+            distributedCigarettes++;
+        }
+    }
+
+
+
+
+
     //level 1
 
 	// Use this for initialization
