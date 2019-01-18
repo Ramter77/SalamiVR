@@ -12,6 +12,7 @@ TagManager:
   - LeftHand
   - RightHand
   - GameManager
+  - Radio
   layers:
   - Default
   - TransparentFX

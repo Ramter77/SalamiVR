@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public static int CurrentObjective = 0; //radio, level 1
     public bool isCompleted = false;
 
-    public PlaySong radioScript;
+    private PlaySong radioScript;
 
 
     [Header("Tassio Booleans")]
@@ -19,6 +20,17 @@ public class GameManager : MonoBehaviour {
     public int distributedCigarettes;
     [Tooltip("How many bottles have been distributed")]
     public int distributedBottles;
+
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        }
+    }
+ 
 
     public void incrementCigarette() {
         distributedCigarettes++;

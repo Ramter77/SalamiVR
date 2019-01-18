@@ -15,19 +15,21 @@ public class PlayerHealth : MonoBehaviour {
 	public static float health;
 	public float maxHealth = 1000;
     public Text text;
+    private HealthIndicator healthIndicatorScript;
 
 	[Header ("Sound")]
     [Tooltip ("Step sound cooldown")]
     public float coughCD;
     public AudioSource headSound;
     public AudioClip coughClip;
-    private bool firstCough;
     private float coughTimer; 
 
     void Start () {
 		health = maxHealth;
 
 		tunnellingScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TunnellingOpaque>();
+
+        healthIndicatorScript = GetComponentInChildren<HealthIndicator>();
 	}
 
 	//-----------------------------------------ALWAYS------------------------------------------//
@@ -79,16 +81,16 @@ public class PlayerHealth : MonoBehaviour {
 			//ONLY DO WHEN DAMAGED:
             UpdateHealth();
 			AdjustTunneling();
-        }		
+        }
 	}
 
 	public void UpdateHealth() {
-		healthPct = (float)health / (float)maxHealth;  
+		healthPct = (float)health / (float)maxHealth;
 
-		//Adjust cough CD
-		coughCD -= healthPct;
+        //Adjust cough CD
+        coughCD = coughCD / (healthPct * 0.1f);
 
-		HealthIndicator.HealthIndicatorUpdate();
+        healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 	}
 
 	void AdjustTunneling() {

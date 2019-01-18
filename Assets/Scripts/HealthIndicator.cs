@@ -8,14 +8,12 @@ public class HealthIndicator : MonoBehaviour {
     private static Material material;
 
 	void Start () {
-
-        healthPercentage = PlayerHealth.healthPct;
         material = GetComponent<Renderer>().material;
-
 	}
 
-    public static void HealthIndicatorUpdate() {
-        healthPercentage = PlayerHealth.healthPct;
-        material.SetFloat("_Cutoff", 1f - healthPercentage);
+    public void HealthIndicatorUpdate(float hPct) {
+        material.SetFloat("_Cutoff", 1f - hPct/100);
+
+        
     }
 }

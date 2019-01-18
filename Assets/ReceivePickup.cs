@@ -38,24 +38,12 @@ public class ReceivePickup : MonoBehaviour {
 				sound.clip = thanksClip[0];		//thanks 0
 				sound.PlayOneShot(sound.clip);	//play thanks file
 
-				
-
-				//
-
-
-				//}
 			}
 		}
 
 		else if (tag == "Bottle") {
-			Debug.Log("Received Bottle");
-
 			//check if recipient is allowed to get that item
-			if (transform.parent.parent.name == "Hubrecht Breukers") {
-				gm.incrementBottle();
-
-				sound.clip = thanksClip[0];		//thanks 0
-				sound.PlayOneShot(sound.clip);	//play thanks file
+			//if (transform.parent.name == "Hubrecht Breukers") {
 		}
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class smokeCollision : MonoBehaviour {
 
-    public PlayerHealth _playerHealth;
+    private PlayerHealth _playerHealth;
 
     void Start()
     {

@@ -32,7 +32,7 @@ public class UIResize : MonoBehaviour {
     public void IncreaseUI() {
 
         canvas.transform.localScale = new Vector3(0.4f,0.4f,0.4f);
-        Debug.Log("yes");
+        //Debug.Log("yes");
 
 
     }
@@ -41,7 +41,7 @@ public class UIResize : MonoBehaviour {
     {
 
         canvas.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        Debug.Log("no");
+        //Debug.Log("no");
 
 
     }
