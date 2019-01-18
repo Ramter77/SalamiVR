@@ -22,7 +22,9 @@ public class PlayerHealth : MonoBehaviour {
     public float coughCD;
     public AudioSource headSound;
     public AudioClip coughClip;
-    private float coughTimer; 
+    private float coughTimer;
+
+    private Coroutine h;
 
     void Start () {
 		health = maxHealth;
@@ -35,19 +37,32 @@ public class PlayerHealth : MonoBehaviour {
 	//-----------------------------------------ALWAYS------------------------------------------//
 	
 	void Update () {
-		//Debug.Log("Player Health: " + health);
+        //Debug.Log("Player Health: " + health);
 
-		//ALWAYS DO:
-        Heal();
-		Cough();
+        //ALWAYS DO:
+        //Heal();
+        h = StartCoroutine(Heal(1));    //heal every second
+        Cough();
 		DisplayHealth();
     }
 
-	public void Heal() {
+    IEnumerator Heal(int repeat)
+    {
+        yield return new WaitForSeconds(repeat);
+        if (health < maxHealth)
+        {
+            health++;       //heal 1 health each <repeat:
+            StopCoroutine(h);
+        }
+    }
+
+    /*
+    public void Heal() {
 		if (health < maxHealth) {
 			health++;		//heal each frame
 		}
 	}
+    */
 
 	public void Cough() {
 		//Cough timer depends on health
@@ -88,7 +103,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthPct = (float)health / (float)maxHealth;
 
         //Adjust cough CD
-        coughCD = coughCD / (healthPct * 0.1f);
+        coughCD = coughCD / healthPct;
 
         healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 	}

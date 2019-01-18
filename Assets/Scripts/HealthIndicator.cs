@@ -12,8 +12,6 @@ public class HealthIndicator : MonoBehaviour {
 	}
 
     public void HealthIndicatorUpdate(float hPct) {
-        material.SetFloat("_Cutoff", 1f - hPct/100);
-
-        
+        material.SetFloat("_Cutoff", 1f - hPct);        
     }
 }
