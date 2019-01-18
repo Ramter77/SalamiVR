@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour {
 		//Debug.Log("Player Health: " + health);
 
 		//ALWAYS DO:
-        //Heal();
+        Heal();
 		Cough();
 		DisplayHealth();
     }
@@ -49,15 +49,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void Cough() {
 		//Cough timer depends on health
-
-		//First Cough SOUND
-        /*
-        if (firstCough) {
-            headSound.clip = coughClip;
-            headSound.PlayOneShot(headSound.clip);
-            firstCough = false;
-        }
-        */
 
         //Cough SOUND
         if (coughTimer <= 0) {

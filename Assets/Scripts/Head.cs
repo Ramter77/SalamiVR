@@ -82,20 +82,27 @@ public class Head : MonoBehaviour {
 	}
 
     private void smokeSound(bool inhale) {
+        /*
         if (playerSound.isPlaying) {
             playerSound.Stop();
         }
+        */
 
-        if (inhale) {
-            playerSound.clip = inhaleClip;
-        }
-        else {
-            playerSound.clip = exhaleClip;
-        }
-        //play corresponding sound
-        playerSound.PlayOneShot(playerSound.clip);	//play inhale sound
+        if (!playerSound.isPlaying)
+        {
+            if (inhale)
+            {
+                playerSound.clip = inhaleClip;
+            }
+            else
+            {
+                playerSound.clip = exhaleClip;
+            }
+            //play corresponding sound
+            playerSound.PlayOneShot(playerSound.clip);	//play inhale sound
 
-        Debug.Log("Play smoke Sound");
+            Debug.Log("Play smoke Sound");
+        }
     }
 
     public float Sum(params float[] array)

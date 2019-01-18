@@ -3,49 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaySong : MonoBehaviour {
-    public static AudioSource RadioSoundData;
-    public static bool isRadioPlaying = false;
-    private bool RadioActivatedOnce = false;
 
-    // Use this for initialization
-    void Start() {
+    public GameManager GameManager;
+    public AudioSource RadioSoundData;
+    public bool isRadioPlaying = false;
+    private bool RadioActivatedOnce = false;    
 
+    void Start() {        
+        if (GameManager == null)
+        {
+            GameManager = GameObject.FindGameObjectWithTag("Radio").GetComponent<GameManager>();
+        }
         RadioSoundData = GetComponent<AudioSource>();
-        
     }
 
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void RadioActivate() {
-
+    public void RadioToggle() {
         if (RadioActivatedOnce == false)
         {
-            GameManager.CheckObjective();
             RadioActivatedOnce = true;
+
+            GameManager.CompleteObjective();
             Debug.Log(RadioActivatedOnce);
         }
 
         if (RadioActivatedOnce == true)
+        {
+            if (isRadioPlaying == false)
             {
-                if (isRadioPlaying == false)
-                {
-                    RadioSoundData.Play();
-                    isRadioPlaying = true;
-
-                }
-                else if (isRadioPlaying == true)
-                {
-
-                    RadioSoundData.Stop();
-                    isRadioPlaying = false;
-                }
-
-
+                RadioSoundData.Play();
+                isRadioPlaying = true;
             }
-
+            else if (isRadioPlaying == true)
+            {
+                RadioSoundData.Stop();
+                isRadioPlaying = false;
+            }
+        }
     }
 }

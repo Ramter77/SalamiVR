@@ -5,11 +5,13 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class Dialog : MonoBehaviour {
-	//This script handles the dialog interaction (the initial sound that plays when the player collides with the
-	//triggered collider and then presses the corresponding button)
+    //This script handles the dialog interaction (the initial sound that plays when the player collides with the
+    //triggered collider and then presses the corresponding button)
 
-	public float smokingDelay;
-	private Hand rightHand;
+    private bool button;
+    private Hand rightHand;
+
+    public float smokingDelay;	
 
 	[Header ("Sound")]
 	//public AudioClip dialogClip;
@@ -17,7 +19,16 @@ public class Dialog : MonoBehaviour {
     private AudioSource sound;
 
 	private void Start() {
-		if (rightHand == null) {
+        if (GameManager.Oculus)
+        {
+            button = SteamVR_Input._default.inActions.GrabPinch.GetState(rightHand.handType);
+        }
+        else
+        {
+            button = SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType);
+        }
+
+        if (rightHand == null) {
 			//GameObject player = GameObject.FindGameObjectWithTag("Player");
 			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand			
 		}
@@ -38,7 +49,7 @@ public class Dialog : MonoBehaviour {
         {
 			Debug.Log("-------// Colliding with player //-------------");
 			//if player presses the interaction button
-			if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
+			if (button) {
 				Debug.Log("----------------------------Interact-------------------------");
 
 				if (!sound.isPlaying) {

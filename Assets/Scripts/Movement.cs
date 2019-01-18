@@ -6,9 +6,10 @@ using Valve.VR.InteractionSystem;
 
 public class Movement : MonoBehaviour {
     //This script handles movement and footstep sounds
-
-    public float moveSpeed = 1;
+    private bool button;
     private Hand leftHand;
+
+    public float moveSpeed = 1;    
     private Transform headCamera;
 
     [Header ("Sound")]
@@ -17,9 +18,19 @@ public class Movement : MonoBehaviour {
     public AudioSource playerSound;
     public AudioClip stepsSound;
     private bool firstStep;
-    private float stepTimer; 
+    private float stepTimer;    
 
-	void Awake () {
+    void Awake () {
+        if (GameManager.Oculus)
+        {
+            button = SteamVR_Input._default.inActions.GrabPinch.GetState(leftHand.handType);
+        }
+        else
+        {
+            button = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
+        }
+
+
         leftHand = GetComponent<Hand>();
         headCamera = transform.parent.Find("VRCamera");
         Debug.Log("Found camera: " + headCamera);
@@ -32,13 +43,11 @@ public class Movement : MonoBehaviour {
 
     void MoveSound() {
         //First Step SOUND
-        /*
         if (firstStep) {
-            sound.clip = stepsSound;
-            sound.PlayOneShot(sound.clip);
+            playerSound.clip = stepsSound;
+            playerSound.PlayOneShot(playerSound.clip);
             firstStep = false;
         }
-        */
 
         //Step SOUND
         if (stepTimer <= 0) {
@@ -53,9 +62,8 @@ public class Movement : MonoBehaviour {
     }
 	
 	void Update () {
-
         //MOVE
-        bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
+        bool move = button;
         if (move) {            
             Move();
             MoveSound();            

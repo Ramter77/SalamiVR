@@ -11,6 +11,7 @@ TagManager:
   - Head
   - LeftHand
   - RightHand
+  - GameManager
   layers:
   - Default
   - TransparentFX
