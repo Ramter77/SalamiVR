@@ -28,6 +28,7 @@ public class Dialog : MonoBehaviour {
 		sound = GetComponent<AudioSource>();
 	}
 
+    //TEST SOUND WITH "F" KEY
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -40,7 +41,7 @@ public class Dialog : MonoBehaviour {
         }
     }
 
-
+    //PLAY CORRESPONDING DIALOG
 	public void playDialog(int number) {
 		//if (sound.isPlaying) {
             if (sound.clip != dialogClip[number])

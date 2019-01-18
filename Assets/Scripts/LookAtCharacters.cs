@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class LookAtCharacters : MonoBehaviour {
 
-public Transform target;
+    private Transform target;
+
+    private void Start() {
+        if (target == null) {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+    }
 
     void Update()
     {

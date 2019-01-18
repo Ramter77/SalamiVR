@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public static bool Oculus;  //change this
 
-    public int CurrentObjective = 0; //radio, level 1
+    public int CurrentObjective = 0;  //level1: cigs, radio
     public bool isCompleted = false;
 
     private PlaySong radioScript;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
         distributedCigarettes++;
         if (distributedCigarettes > leftCigarettes) {
             //Execute public function on UI here that makes the objective text disappear
+            //UI.removeObjective(name);
 
             //completed objective
             CompleteObjective();
@@ -57,6 +58,12 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start () {
+        /*
+        if (UIscript == null) {
+            radioScript = GameObject.FindGameObjectWithTag("UI").GetComponent<PlaySong>();
+        }
+        */
+        
         if (radioScript == null)
         {
             radioScript = GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>();

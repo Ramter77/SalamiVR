@@ -33,17 +33,23 @@ public class ReceivePickup : MonoBehaviour {
 				alreadyReceivedCigarette = true;
 
 				//increment amount of cigarettes distributed & check if objective completed
-				gm.incrementCigarette();	
+				gm.incrementCigarette();	//pass   gameObject.name   ?
 
 				sound.clip = thanksClip[0];		//thanks 0
 				sound.PlayOneShot(sound.clip);	//play thanks file
-
 			}
 		}
 
 		else if (tag == "Bottle") {
+			Debug.Log("Received Bottle");
+
 			//check if recipient is allowed to get that item
-			//if (transform.parent.name == "Hubrecht Breukers") {
+			if (transform.parent.parent.name == "Hubrecht Breukers") {
+				//gm.incrementBottle();
+
+				sound.clip = thanksClip[0];		//thanks 0
+				sound.PlayOneShot(sound.clip);	//play thanks file
+			}
 		}
 	}
 }
