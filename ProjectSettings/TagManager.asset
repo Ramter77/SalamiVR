@@ -13,6 +13,7 @@ TagManager:
   - RightHand
   - GameManager
   - Radio
+  - UI
   layers:
   - Default
   - TransparentFX

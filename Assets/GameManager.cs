@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     public static bool Oculus;  //change this
 
-    public static int CurrentObjective = 0; //radio, level 1
+    public int CurrentObjective = 0; //radio, level 1
     public bool isCompleted = false;
 
     private PlaySong radioScript;
+    public Text objectiveText; 
 
 
     [Header("Tassio Booleans")]
@@ -74,6 +76,8 @@ public class GameManager : MonoBehaviour {
 
         }
     }
+
+
 
 
 

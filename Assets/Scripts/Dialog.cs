@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour {
     //This script handles the dialog interaction (the initial sound that plays when the player collides with the
@@ -16,12 +17,14 @@ public class Dialog : MonoBehaviour {
 	//public AudioClip dialogClip;
 	public AudioClip[] dialogClip;
     private AudioSource sound;
+    private UIController UIController;
 
 	private void Start() {
         if (rightHand == null) {
 			//GameObject player = GameObject.FindGameObjectWithTag("Player");
-			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand			
-		}
+			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand	
+            UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
+        }
 		sound = GetComponent<AudioSource>();
 	}
 
@@ -75,7 +78,8 @@ public class Dialog : MonoBehaviour {
 
 				//Activate objective on UI
 				if (transform.parent.name == "Mother") {
-					//execute public function on UI which makes the objective text appear
+                    //execute public function on UI which makes the objective text appear
+                    UIController.AddObjective("Mother");
 					Debug.Log("Pass the cigarettes objective activated");
 				}
 			}

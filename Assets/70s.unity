@@ -4279,9 +4279,10 @@ GameObject:
   - component: {fileID: 177128476}
   - component: {fileID: 177128475}
   - component: {fileID: 177128474}
+  - component: {fileID: 177128479}
   m_Layer: 8
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4403,6 +4404,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &177128479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 177128472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2b5184cfb7cab4e9385e8f22b7ed1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveText: {fileID: 345822262}
 --- !u!1 &177509962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,6 +4444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCompleted: 0
+  objectiveText: {fileID: 0}
   leftCigarettes: 0
   distributedCigarettes: 0
   distributedBottles: 0
