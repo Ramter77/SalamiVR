@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour {
         //Debug.Log("Player Health: " + health);
 
         //ALWAYS DO:
-        //Heal();           
+        //Heal(); (in coroutine)           
         Cough();
 		DisplayHealth();
     }
@@ -58,18 +58,8 @@ public class PlayerHealth : MonoBehaviour {
         StartCoroutine(Heal(1));
     }
 
-    /*
-    public void Heal() {
-		if (health < maxHealth) {
-			health++;		//heal each frame
-		}
-	}
-    */
-
 	public void Cough() {
-		//Cough timer depends on health
-
-        //Cough SOUND
+        //Cough SOUND (timer depends on health
         if (coughTimer <= 0) {
             headSound.clip = coughClip;
             headSound.loop = true;
@@ -79,8 +69,6 @@ public class PlayerHealth : MonoBehaviour {
         else {
             coughTimer -= Time.deltaTime;
         }
-
-		//Debug.Log("Cough Cooldown: " + coughCD);
 	}
 
 	void DisplayHealth() {
@@ -103,13 +91,10 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void UpdateHealth() {
 		healthPct = (float)health / (float)maxHealth; 
+        healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 
         //Adjust cough CD
-        //Debug.Log(healthPct);
-        coughCD = (1 + healthPct * 600) + 60;
-        //Debug.Log(coughCD);
-
-        healthIndicatorScript.HealthIndicatorUpdate(healthPct);
+        coughCD = (1 + healthPct * 600) + 60;        
 	}
 
 	void AdjustTunneling() {

@@ -42,8 +42,7 @@ public class ReceivePickup : MonoBehaviour {
             }
 		}
 
-		else if (tag == "Bottle") {
-            
+		else if (tag == "Bottle") {            
             Debug.Log("Received Bottle");
 
 			//check if recipient is allowed to get that item

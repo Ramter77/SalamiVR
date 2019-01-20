@@ -14,24 +14,19 @@ public class Dialog : MonoBehaviour {
     public float smokingDelay;	
 
 	[Header ("Sound")]
-	//public AudioClip dialogClip;
 	public AudioClip[] dialogClip;
     private AudioSource sound;
     private UIController UIController;
 
     [Header("Smoker UI options")]
     public DialogHelper dialogHelper;
-
-    public GameObject motherBubble;
-
-    
+    public GameObject motherBubble;    
 
     private void Start() {
         if (rightHand == null) {
-			//GameObject player = GameObject.FindGameObjectWithTag("Player");
-			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand	
-            UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
+			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand
         }
+        UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
 		sound = GetComponent<AudioSource>();
 	}
 
@@ -50,23 +45,6 @@ public class Dialog : MonoBehaviour {
 
     //PLAY CORRESPONDING DIALOG on clicking the seperate UI options
 	public void playDialog(int number) {
-        //if (sound.isPlaying) {
-
-        /*
-        //Debug.Log(sound.clip != dialogClip[0]);
-        if (sound.clip != dialogClip[number]) {
-            if (!sound.isPlaying)
-            {
-
-
-                sound.clip = dialogClip[number];
-                sound.PlayOneShot(sound.clip);  //play dialog file
-            }
-        }
-        */
-
-        
-
         if (sound.clip != dialogClip[number])
         {
             sound.clip = dialogClip[number];
@@ -98,16 +76,10 @@ public class Dialog : MonoBehaviour {
             }
             else if (number == 4)
             {
-                //dialogHelper.Helper(3);
-                //addObjective
-
-                
+                //Get the whiskey
                 UIController.AddObjective(transform.parent.name);
             }
-
-
         }
-        //}
     }
 	
 	//If player enters collider interact
@@ -155,22 +127,17 @@ public class Dialog : MonoBehaviour {
 
                 //Activate objective on UI
                 if (transform.parent.name == "Mother") {
-                    //execute public function on UI which makes the objective text appear
+                    //Makes the objective text appear and deactivates bubble
                     UIController.AddObjective("Mother");
                     motherBubble.SetActive(false);
-
-
 
 					Debug.Log("Pass the cigarettes objective activated");
 				}
                 else if (transform.parent.name == "Hubrecht Breukers")
                 {
-                    //execute public function on UI which makes the objective text appear
-                    //UIController.AddObjective("Hubrecht Breukers");
-
-
                     //wait a bit before enabling
                     dialogHelper.Helper(0);
+
                     Debug.Log("Bring Whiskey");
                 }
             }

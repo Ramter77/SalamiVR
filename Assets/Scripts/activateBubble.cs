@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class activateBubble : MonoBehaviour {
+    //This script activates the speech bubbles over the heads of ppl
 
 	void Start () {
         disable();

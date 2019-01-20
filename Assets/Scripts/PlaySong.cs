@@ -23,7 +23,8 @@ public class PlaySong : MonoBehaviour {
             RadioActive = false;
             isRadioPlaying = true;
             GameManager.incrementRadio();
-            Debug.Log("End of level");
+
+            Debug.Log("End of level 1");
         }
 
         if (RadioActive == false)

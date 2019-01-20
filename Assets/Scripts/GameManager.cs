@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public static bool Oculus;  //change this
 
-    public int CurrentObjective = 0;  //level1: cigs, radio
+    public int CurrentObjective = 0;  //level1: cigs, whiskey, radio
     public bool isCompleted = false;
 
     private PlaySong radioScript;
@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+            Scene scene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene(scene.name);
         }
     } 
 
@@ -81,6 +82,12 @@ public class GameManager : MonoBehaviour {
     {
         CurrentObjective++;
 
+
+        //Play completed sound
+
+
+
+
         if (CurrentObjective == 1)
         {   //cigarettes
             //make speech bubble over bottle objective appear
@@ -90,34 +97,4 @@ public class GameManager : MonoBehaviour {
 
         }
     }
-
-
-
-
-
-
-
-    /*
-    public void CheckObjective() {
-
-        if (CurrentObjective == 1 && isCompleted == false) {
-
-            radioScript.RadioSoundData.Play();
-            isCompleted = true;
-            CheckObjectiveCompletion();
-            
-
-        }
-
-        }
-
-    private void CheckObjectiveCompletion() {
-        if (isCompleted == true) {
-            CurrentObjective += 1;
-            isCompleted = false;
-            Debug.Log(CurrentObjective);
-        }
-        
-    }
-    */
 }

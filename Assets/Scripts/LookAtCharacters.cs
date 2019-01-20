@@ -19,13 +19,13 @@ public class LookAtCharacters : MonoBehaviour
 
     void Update()
     {
-
         Vector3 look = target.transform.position - transform.position;
         look.y = 0;
 
         Quaternion q = Quaternion.LookRotation(look);
-        if (Quaternion.Angle(q, baseRotation) <= maxAngle) { targetRotation = q;  }
-            
+        if (Quaternion.Angle(q, baseRotation) <= maxAngle) { 
+            targetRotation = q;  
+        }        
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
     }
