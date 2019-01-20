@@ -16,15 +16,24 @@ public class SceneTransitionController : MonoBehaviour {
     private bool SecondText = false;
     private bool ThirdText = false;
 
+    public int seconds;
+
+    private Animation anim;
+
     void Start () {
         color = GetComponent<MeshRenderer>().material.color;
+        anim = gameObject.GetComponent<Animation>();
         StartCoroutine(Timer());
-        
     }
 
     private void FadeIn() {
         color.a = Time.time - Mathf.Floor(Time.time);
 
+    }
+
+    public void StartAnimation(){
+        anim.Play("fade");
+        Debug.Log("FADE TRANSITION");
     }
 	
 	
@@ -34,14 +43,10 @@ public class SceneTransitionController : MonoBehaviour {
 
     IEnumerator Timer()
     {
-        if (fade) {
-            //print(Time.time);
-            yield return new WaitForSeconds(5);
-            
-            //print(Time.time);
-            FadeIn();
-            
-        }
+        print(Time.time);
+        yield return new WaitForSeconds(seconds);
+        print(Time.time);
+        StartAnimation();
 
     }
 }

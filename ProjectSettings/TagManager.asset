@@ -15,6 +15,7 @@ TagManager:
   - Radio
   - UI
   - Bottle
+  - SceneTransition
   layers:
   - Default
   - TransparentFX

@@ -4450,6 +4450,7 @@ MonoBehaviour:
   isCompleted: 0
   objectiveText: {fileID: 0}
   UIController: {fileID: 0}
+  SceneTransitionController: {fileID: 0}
   leftCigarettes: 2
   distributedCigarettes: 0
   distributedBottles: 0
@@ -56803,9 +56804,10 @@ GameObject:
   - component: {fileID: 1599106145}
   - component: {fileID: 1599106144}
   - component: {fileID: 1599106147}
+  - component: {fileID: 1599106148}
   m_Layer: 0
   m_Name: Quad
-  m_TagString: Untagged
+  m_TagString: SceneTransition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56858,7 +56860,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599106143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -56880,6 +56882,21 @@ MonoBehaviour:
   YearText: {fileID: 444649255}
   LocationText: {fileID: 2000296989}
   EventTypeText: {fileID: 902965516}
+  seconds: 5
+--- !u!111 &1599106148
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599106143}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 06143f07209552c45963dbea6dd26c51, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1600972265
 GameObject:
   m_ObjectHideFlags: 0

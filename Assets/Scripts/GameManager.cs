@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     //UI controller script
     public UIController UIController;
 
+    public SceneTransitionController SceneTransitionController;
+
     [Header("Tassio Booleans")]
     [Tooltip ("How many cigarette have to be distributed")]
     public int leftCigarettes;
@@ -80,6 +82,13 @@ public class GameManager : MonoBehaviour {
     void Start () {
         //FADE IN SCREEN
 
+        if (SceneTransitionController = null){
+
+            SceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
+            FadeIn();
+        }
+
+        
 
         if (UIController == null) {
             UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
@@ -90,6 +99,13 @@ public class GameManager : MonoBehaviour {
             radioScript = GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>();
         }
     }
+
+    public void FadeIn(){
+        
+        SceneTransitionController.StartAnimation();
+
+    }
+
 
     public void CompleteObjective()
     {
