@@ -1,26 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-public class LookAtCharacters : MonoBehaviour {
-
+public class LookAtCharacters : MonoBehaviour
+{
     private Transform target;
+    public float maxAngle = 35.0f;
+    private Quaternion baseRotation;
+    private Quaternion targetRotation;
 
-    private void Start() {
-        if (target == null) {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }
+
+    void Start()
+    {
+        baseRotation = transform.rotation;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        Vector3 relativePos = target.position - transform.position;
 
-        // the second argument, upwards, defaults to Vector3.up
-        Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-        transform.rotation = rotation;
+        Vector3 look = target.transform.position - transform.position;
+        look.y = 0;
+
+        Quaternion q = Quaternion.LookRotation(look);
+        if (Quaternion.Angle(q, baseRotation) <= maxAngle) { targetRotation = q;  }
+            
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
     }
-
 }
-
-

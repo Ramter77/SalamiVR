@@ -19,7 +19,14 @@ public class Dialog : MonoBehaviour {
     private AudioSource sound;
     private UIController UIController;
 
-	private void Start() {
+    [Header("Smoker UI options")]
+    public DialogHelper dialogHelper;
+
+    public GameObject motherBubble;
+
+    
+
+    private void Start() {
         if (rightHand == null) {
 			//GameObject player = GameObject.FindGameObjectWithTag("Player");
 			rightHand = GameObject.FindGameObjectWithTag("RightHand").GetComponent<Hand>();	//get right hand	
@@ -58,18 +65,47 @@ public class Dialog : MonoBehaviour {
         }
         */
 
-        if (sound.clip != dialogClip[0])
+        
+
+        if (sound.clip != dialogClip[number])
         {
-            sound.clip = dialogClip[0];
+            sound.clip = dialogClip[number];
             sound.PlayOneShot(sound.clip);  //play dialog file
         }
         else
         {
             if (!sound.isPlaying)
             {
-                sound.clip = dialogClip[0];
+                sound.clip = dialogClip[number];
                 sound.PlayOneShot(sound.clip);  //play dialog file
             }
+        }
+
+        if (transform.parent.name == "Hubrecht Breukers")
+        {
+            if (number == 1)
+            {
+                dialogHelper.Helper(1);
+                dialogHelper.Helper(2);
+            }
+            else if (number == 2) {
+
+                dialogHelper.Helper(3);
+            }
+            else if (number == 3)
+            {
+                dialogHelper.Helper(3);
+            }
+            else if (number == 4)
+            {
+                //dialogHelper.Helper(3);
+                //addObjective
+
+                
+                UIController.AddObjective(transform.parent.name);
+            }
+
+
         }
         //}
     }
@@ -110,7 +146,7 @@ public class Dialog : MonoBehaviour {
                         sound.PlayOneShot(sound.clip);  //play dialog file
                     }
                 }
-                
+
 
                 gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
                 //gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
@@ -121,12 +157,20 @@ public class Dialog : MonoBehaviour {
                 if (transform.parent.name == "Mother") {
                     //execute public function on UI which makes the objective text appear
                     UIController.AddObjective("Mother");
+                    motherBubble.SetActive(false);
+
+
+
 					Debug.Log("Pass the cigarettes objective activated");
 				}
                 else if (transform.parent.name == "Hubrecht Breukers")
                 {
                     //execute public function on UI which makes the objective text appear
-                    UIController.AddObjective("Hubrecht Breukers");
+                    //UIController.AddObjective("Hubrecht Breukers");
+
+
+                    //wait a bit before enabling
+                    dialogHelper.Helper(0);
                     Debug.Log("Bring Whiskey");
                 }
             }

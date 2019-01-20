@@ -107,7 +107,7 @@ public class PlayerHealth : MonoBehaviour {
         //Adjust cough CD
         //Debug.Log(healthPct);
         coughCD = (1 + healthPct * 600) + 60;
-        Debug.Log(coughCD);
+        //Debug.Log(coughCD);
 
         healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 	}
