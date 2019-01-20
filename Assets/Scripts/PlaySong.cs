@@ -18,15 +18,15 @@ public class PlaySong : MonoBehaviour {
     }
 
     public void RadioToggle() {
-        if (RadioActive == true)
+        if (RadioActive == true && isRadioPlaying == false)
         {
             RadioActive = false;
-
+            isRadioPlaying = true;
             GameManager.incrementRadio();
             Debug.Log("End of level");
         }
 
-        if (RadioActive == true)
+        if (RadioActive == false)
         {
             if (isRadioPlaying == false)
             {
