@@ -14,7 +14,7 @@ public class DialogHelper : MonoBehaviour {
     }
 
     public void Helper(int j) {
-        Debug.Log(options[j]);
+        //Debug.Log(options[j]);
         
         options[j].gameObject.SetActive(true);
     }

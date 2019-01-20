@@ -76,7 +76,7 @@ public class Dialog : MonoBehaviour {
             }
             else if (number == 4)
             {
-                //Get the whiskey
+                //Get the whiskey             
                 UIController.AddObjective(transform.parent.name);
             }
         }
@@ -126,7 +126,7 @@ public class Dialog : MonoBehaviour {
 
 
                 //Activate objective on UI
-                if (transform.parent.name == "Mother") {
+                if (transform.parent.name == "Mother") {                    
                     //Makes the objective text appear and deactivates bubble
                     UIController.AddObjective("Mother");
                     motherBubble.SetActive(false);
@@ -136,9 +136,7 @@ public class Dialog : MonoBehaviour {
                 else if (transform.parent.name == "Hubrecht Breukers")
                 {
                     //wait a bit before enabling
-                    dialogHelper.Helper(0);
-
-                    Debug.Log("Bring Whiskey");
+                    dialogHelper.Helper(0);                    
                 }
             }
         }

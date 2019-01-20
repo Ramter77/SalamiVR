@@ -18,6 +18,18 @@ public class PlaySong : MonoBehaviour {
     }
 
     public void RadioToggle() {
+        if (GameManager.radioInteractionEnabled && isRadioPlaying == false)
+        {
+            RadioActive = false;
+
+            isRadioPlaying = false;
+            GameManager.incrementRadio();
+
+            Debug.Log("End of level 1");
+        }
+
+
+        /*
         if (RadioActive == true && isRadioPlaying == false)
         {
             RadioActive = false;
@@ -26,6 +38,7 @@ public class PlaySong : MonoBehaviour {
 
             Debug.Log("End of level 1");
         }
+        */
 
         if (RadioActive == false)
         {
@@ -36,9 +49,14 @@ public class PlaySong : MonoBehaviour {
             }
             else if (isRadioPlaying == true)
             {
-                RadioSoundData.Stop();
-                isRadioPlaying = false;
+                turnOffRadio();
             }
         }
+    }
+
+    public void turnOffRadio()
+    {
+        RadioSoundData.Stop();
+        isRadioPlaying = false;
     }
 }

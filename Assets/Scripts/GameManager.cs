@@ -20,10 +20,15 @@ public class GameManager : MonoBehaviour {
     [Header("Tassio Booleans")]
     [Tooltip ("How many cigarette have to be distributed")]
     public int leftCigarettes;
+    public static bool cigaretteDistributionEnabled = false;
     [Tooltip("How many cigarette have been distributed")]
     public int distributedCigarettes;
+
+    public static bool bottleDistributionEnabled = false;
     [Tooltip("How many bottles have been distributed")]
     public int distributedBottles;
+
+    public bool radioInteractionEnabled = false;
 
 
 
@@ -45,6 +50,8 @@ public class GameManager : MonoBehaviour {
             //completed objective
             CompleteObjective();
             UIController.RemoveObjective();
+
+            cigaretteDistributionEnabled = false;
         }
     }
 
@@ -56,6 +63,8 @@ public class GameManager : MonoBehaviour {
             //completed objective
             CompleteObjective();
             UIController.RemoveObjective();
+
+            bottleDistributionEnabled = false;
         }
     }
 
@@ -63,11 +72,15 @@ public class GameManager : MonoBehaviour {
     {   
         CompleteObjective();
         UIController.RemoveObjective();
+
+        radioInteractionEnabled = false;
     }
 
 
     void Start () {
-        
+        //FADE IN SCREEN
+
+
         if (UIController == null) {
             UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
         }
@@ -82,7 +95,7 @@ public class GameManager : MonoBehaviour {
     {
         CurrentObjective++;
 
-
+        Debug.Log("Current objective: " + CurrentObjective);
         //Play completed sound
 
 
@@ -91,6 +104,8 @@ public class GameManager : MonoBehaviour {
         if (CurrentObjective == 1)
         {   //cigarettes
             //make speech bubble over bottle objective appear
+
+            
         }
         else if (CurrentObjective == 2)
         {    //bottle

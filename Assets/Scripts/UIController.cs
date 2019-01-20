@@ -20,20 +20,26 @@ public class UIController : MonoBehaviour {
 
     public void updateLeftCigarettes ()
     {
-        objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes + 1).ToString());
+        objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes).ToString());
     }
 	
     public void AddObjective(string name) {
 
 
         if (name == "Mother") {
-            objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes + 1).ToString());
+            GameManager.cigaretteDistributionEnabled = true;
+            objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes).ToString());
         }
 
         else if (name == "Hubrecht Breukers")
         {
+            Debug.Log("Bring Whiskey objective activated");
+
+            GameManager.bottleDistributionEnabled = true;
             objectiveText.text = ("Get your uncle \n some whiskey");
         }
+
+
     }
 
     public void RemoveObjective() {
@@ -55,15 +61,23 @@ public class UIController : MonoBehaviour {
         {
             HubrechtBubble.disable();
             objectiveText.text = ("Turn on the radio");
+
             RadioBubble.enable();
+            GameManager.radioInteractionEnabled = true;
 
             //highlight material/object
         }
         else if (GameManager.CurrentObjective == 3) {
             //fade to next level
+            RadioBubble.disable();
+        }
 
-        } 
-        
+        else if (GameManager.CurrentObjective == 4)
+        {
+            //fade to next level
+            Debug.Log("ENDED");
+        }
+
         else {
             Debug.Log("Objective Error: its a feature");
         }

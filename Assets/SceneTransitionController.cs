@@ -35,10 +35,10 @@ public class SceneTransitionController : MonoBehaviour {
     IEnumerator Timer()
     {
         if (fade) {
-            print(Time.time);
+            //print(Time.time);
             yield return new WaitForSeconds(5);
             
-            print(Time.time);
+            //print(Time.time);
             FadeIn();
             
         }
