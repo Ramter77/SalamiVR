@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 045f4ee96ef91064796abb3fd66f4374
+guid: a033a464e848a384aa813e2b8de0b713
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -63,12 +63,7 @@ ModelImporter:
     4300016: polySurface9
     4300018: polySurface10
     4300020: polySurface11
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 1ca3a64f8c990ed42864de23ee11cc21, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
