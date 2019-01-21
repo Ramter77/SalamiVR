@@ -24,7 +24,7 @@ public class ReceivePickup : MonoBehaviour {
 
         //toggleModelScript = transform.parent.parent.Find("NCCigarette").GetComponent<toggleModel>();
 
-        Debug.Log(transform.parent.parent.name);
+        //Debug.Log(transform.parent.parent.name);
         toggleModelScript = transform.parent.parent.GetChild(0).GetChild(0).GetComponent<toggleModel>();
     }
 	
@@ -71,5 +71,5 @@ public class ReceivePickup : MonoBehaviour {
                 }
             }
 		}
-	}
+    }
 }

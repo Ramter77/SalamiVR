@@ -17,6 +17,7 @@ TagManager:
   - Bottle
   - SceneTransition
   - cakeLocation
+  - fakeCake
   layers:
   - Default
   - TransparentFX

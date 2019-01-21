@@ -20,7 +20,8 @@ public class Dialog : MonoBehaviour {
 
     [Header("Smoker UI options")]
     public DialogHelper dialogHelper;
-    public GameObject motherBubble;    
+    public GameObject motherBubble;
+    public GameObject cakeBubble;
 
     private void Start() {
         if (rightHand == null) {
@@ -80,6 +81,25 @@ public class Dialog : MonoBehaviour {
                 UIController.AddObjective(transform.parent.name);
             }
         }
+
+
+        if (transform.parent.name == "Mother2")
+        {
+            if (number == 1)
+            {
+                UIController.AddObjective("MotherSmoke");
+
+                dialogHelper.Helper(1);
+            }
+            if (number == 2)
+            {
+                motherBubble.SetActive(false);
+
+                UIController.AddObjective("MotherCake");
+
+                cakeBubble.SetActive(true);
+            }
+        }
     }
 	
 	//If player enters collider interact
@@ -122,9 +142,11 @@ public class Dialog : MonoBehaviour {
 
                 gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
                 //gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
+                
+                
+                //level1
 
-
-
+                                               
                 //Activate objective on UI
                 if (transform.parent.name == "Mother") {                    
                     //Makes the objective text appear and deactivates bubble
@@ -138,6 +160,20 @@ public class Dialog : MonoBehaviour {
                     //wait a bit before enabling
                     dialogHelper.Helper(0);                    
                 }
+
+                //level2
+
+                /*else if (transform.parent.name == "Mother2")
+                {
+                    //Makes the objective text appear and deactivates bubble
+                    UIController.AddObjective("Mother2");
+                    //motherBubble.SetActive(false);
+
+                    Debug.Log("Smoke the cigarettes and get lung cancer");
+                    
+                }
+                */
+               
             }
         }
     }

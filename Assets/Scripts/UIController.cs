@@ -39,47 +39,92 @@ public class UIController : MonoBehaviour {
             objectiveText.text = ("Get your uncle \n some whiskey");
         }
 
+        //level2
+
+        else if (name == "MotherSmoke")
+        {
+            Debug.Log("LungCancer");
+
+            GameManager.activateSmoking = true;
+            objectiveText.text = ("Smoke a \n cigarette");
+        }
+        else if (name == "MotherCake")
+        {
+            Debug.Log("Bring Cake");
+
+            GameManager.activateCakeLocation();
+            objectiveText.text = ("Bring the cake \n to the table");
+        }
+
+
 
     }
 
     public void RemoveObjective() {
-        if (GameManager.CurrentObjective == 0)
+        if (GameManager.level == 1)
         {
-            objectiveText.text = ("Go talk to \n your mother");
-            //highlight material/object
+            if (GameManager.CurrentObjective == 0)
+            {
+                objectiveText.text = ("Go talk to \n your mother");
+                //highlight material/object
+            }
+
+            else if (GameManager.CurrentObjective == 1)
+            {
+                objectiveText.text = ("Go talk to \n your uncle");
+                HubrechtBubble.enable();
+
+                //highlight material/object
+            }
+
+            else if (GameManager.CurrentObjective == 2)
+            {
+                HubrechtBubble.disable();
+                objectiveText.text = ("Turn on the radio");
+
+                RadioBubble.enable();
+                GameManager.radioInteractionEnabled = true;
+
+                //highlight material/object
+            }
+            else if (GameManager.CurrentObjective == 3)
+            {
+                //fade to next level
+                RadioBubble.disable();
+            }
+
+            else if (GameManager.CurrentObjective == 4)
+            {
+                //fade to next level
+                Debug.Log("ENDED");
+            }
+
+            else
+            {
+                Debug.Log("Objective Error: its a feature");
+            }
         }
 
-        else if (GameManager.CurrentObjective == 1)
+        else if (GameManager.level == 2)
         {
-            objectiveText.text = ("Go talk to \n your uncle");
-            HubrechtBubble.enable();
+            Debug.Log("currentObj: " + GameManager.CurrentObjective);
 
-            //highlight material/object
-        }
 
-        else if (GameManager.CurrentObjective == 2)
-        {
-            HubrechtBubble.disable();
-            objectiveText.text = ("Turn on the radio");
+            if (GameManager.CurrentObjective == 0)
+            {
+                objectiveText.text = ("Go talk to \n your mother");
+                //highlight material/object
 
-            RadioBubble.enable();
-            GameManager.radioInteractionEnabled = true;
+                
+            }
 
-            //highlight material/object
-        }
-        else if (GameManager.CurrentObjective == 3) {
-            //fade to next level
-            RadioBubble.disable();
-        }
+            else if (GameManager.CurrentObjective == 1)
+            {
+                objectiveText.text = ("saejlfnbkjsrdhbr");
+                //highlight material/object
 
-        else if (GameManager.CurrentObjective == 4)
-        {
-            //fade to next level
-            Debug.Log("ENDED");
-        }
 
-        else {
-            Debug.Log("Objective Error: its a feature");
+            }
         }
 
     }

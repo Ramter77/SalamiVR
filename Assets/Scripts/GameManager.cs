@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public int levelNumber;
+    public static int level;
 
     public static bool Oculus;  //change this
 
@@ -34,7 +36,26 @@ public class GameManager : MonoBehaviour
 
     public bool radioInteractionEnabled = false;
 
+    //level2
+
+    public static bool activateSmoking = false;
+    public GameObject cakeLocation;
+    public static bool activateCake = false;
+    public static bool cakeDistributionEnabled = false;
+    public int distributedCake;
+
     public SceneTransitionController sceneTransitionController;
+
+    public void activateCakeLocation()
+    {
+        cakeLocation.SetActive(true);
+        activateCake = true;
+    }
+
+    private void Awake()
+    {
+        level = levelNumber;
+    }
 
     void Update()
     {
@@ -90,9 +111,7 @@ public class GameManager : MonoBehaviour
 
             bottleDistributionEnabled = false;
         }
-    }
-
-    
+    }    
 
     public void incrementRadio()
     {
@@ -106,6 +125,15 @@ public class GameManager : MonoBehaviour
         sceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
         StartCoroutine(increasePitchandFade(1f));
         //sceneTransitionController.FadeToBlack();
+    }
+
+    public void incrementCake()
+    {
+        CompleteObjective();
+        UIController.RemoveObjective();
+
+        activateCake = false;
+        cakeDistributionEnabled = true;
     }
 
     private IEnumerator increasePitchandFade(float seconds) {        
@@ -149,6 +177,9 @@ public class GameManager : MonoBehaviour
         }
 
         sound = GetComponent<AudioSource>();
+
+
+        cakeLocation.SetActive(false);
     }
 
     public void CompleteObjective()
