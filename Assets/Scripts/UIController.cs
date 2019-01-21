@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
     public Text objectiveText;
-    public GameManager GameManager;
+    private GameManager GameManager;
 
 
     public activateBubble HubrechtBubble;

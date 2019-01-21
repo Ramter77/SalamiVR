@@ -4450,11 +4450,11 @@ MonoBehaviour:
   isCompleted: 0
   objectiveText: {fileID: 0}
   UIController: {fileID: 0}
-  SceneTransitionController: {fileID: 0}
   leftCigarettes: 2
   distributedCigarettes: 0
   distributedBottles: 0
   radioInteractionEnabled: 0
+  sceneTransitionController: {fileID: 0}
 --- !u!4 &177509964
 Transform:
   m_ObjectHideFlags: 0
@@ -7464,7 +7464,10 @@ MonoBehaviour:
   text: {fileID: 1124420421}
   coughCD: 6000
   headSound: {fileID: 297025965}
-  coughClip: {fileID: 8300000, guid: 7113854dded09be418cf3be1158d444c, type: 3}
+  coughClip:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &333351015
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57099,7 +57102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1599106144
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -9,39 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1857485474993418}
+  m_RootGameObject: {fileID: 1161305305228188}
   m_IsPrefabAsset: 1
---- !u!1 &1269198776841968
+--- !u!1 &1161305305228188
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4503786170155894}
-  - component: {fileID: 33357542015630480}
-  - component: {fileID: 23071207708977172}
-  - component: {fileID: 65797291529124206}
-  m_Layer: 0
-  m_Name: WhiskeyBottle
-  m_TagString: Bottle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1857485474993418
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4906667559740196}
-  - component: {fileID: 54458417866048742}
-  - component: {fileID: 114571410043527114}
-  - component: {fileID: 114338061598618286}
-  - component: {fileID: 114386482452248288}
-  - component: {fileID: 114990654890261202}
+  - component: {fileID: 4623160925913700}
+  - component: {fileID: 54279404185614148}
+  - component: {fileID: 114325806892225410}
+  - component: {fileID: 114170143744587448}
+  - component: {fileID: 114188785836756796}
+  - component: {fileID: 114717888649234494}
   m_Layer: 0
   m_Name: WhiskeyBottle
   m_TagString: Untagged
@@ -49,39 +31,57 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4503786170155894
+--- !u!1 &1401877993256146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4356025498886190}
+  - component: {fileID: 33017046798941656}
+  - component: {fileID: 23746068955561562}
+  - component: {fileID: 65097401898958692}
+  m_Layer: 0
+  m_Name: WhiskeyBottle
+  m_TagString: Bottle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4356025498886190
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269198776841968}
+  m_GameObject: {fileID: 1401877993256146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.57764, y: 15, z: 10.57764}
   m_Children: []
-  m_Father: {fileID: 4906667559740196}
+  m_Father: {fileID: 4623160925913700}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4906667559740196
+--- !u!4 &4623160925913700
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.189497, y: 0.85145223, z: -2.1479836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4503786170155894}
+  - {fileID: 4356025498886190}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23071207708977172
+--- !u!23 &23746068955561562
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269198776841968}
+  m_GameObject: {fileID: 1401877993256146}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -111,19 +111,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33357542015630480
+--- !u!33 &33017046798941656
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269198776841968}
+  m_GameObject: {fileID: 1401877993256146}
   m_Mesh: {fileID: 4300000, guid: 0c16d4c65872dc144b38c3d76ea62713, type: 3}
---- !u!54 &54458417866048742
+--- !u!54 &54279404185614148
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -133,24 +133,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!65 &65797291529124206
+--- !u!65 &65097401898958692
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269198776841968}
+  m_GameObject: {fileID: 1401877993256146}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.012135773, y: 0.015560672, z: 0.012135774}
   m_Center: {x: 6.984919e-10, y: 0.0027803357, z: 0}
---- !u!114 &114338061598618286
+--- !u!114 &114170143744587448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
@@ -168,12 +168,12 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!114 &114386482452248288
+--- !u!114 &114188785836756796
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
@@ -224,12 +224,12 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   snapAttachEaseInCompleted: 0
   interactable: {fileID: 0}
---- !u!114 &114571410043527114
+--- !u!114 &114325806892225410
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
@@ -238,12 +238,12 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &114990654890261202
+--- !u!114 &114717888649234494
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857485474993418}
+  m_GameObject: {fileID: 1161305305228188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4153b26428ccf041950b92c057812a3, type: 3}

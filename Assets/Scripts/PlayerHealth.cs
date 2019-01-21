@@ -5,23 +5,24 @@ using UnityEngine.UI;
 using Sigtrap.VrTunnellingPro;
 
 public class PlayerHealth : MonoBehaviour {
-	//This script handles the players health, displays it to the UI, adjusts the tunneling effect,
-	//Heals, takes damage from smoke, coughs
+    //This script handles the players health, displays it to the UI, adjusts the tunneling effect,
+    //Heals, takes damage from smoke, coughs
 
-	private TunnellingOpaque tunnellingScript;
+    private TunnellingOpaque tunnellingScript;
 
-	[Header ("Health")]
-	public static float healthPct;
-	public static float health;
-	public float maxHealth = 1000;
+    [Header("Health")]
+    public static float healthPct;
+    public static float health;
+    public float maxHealth = 1000;
     public Text text;
     private HealthIndicator healthIndicatorScript;
 
-	[Header ("Sound")]
-    [Tooltip ("Step sound cooldown")]
+    [Header("Sound")]
+    [Tooltip("Step sound cooldown")]
     public float coughCD;
+    private bool firstCough = true;
     public AudioSource headSound;
-    public AudioClip coughClip;
+    public AudioClip[] coughClip;
     private float coughTimer;
 
     private Coroutine h;
@@ -59,15 +60,27 @@ public class PlayerHealth : MonoBehaviour {
     }
 
 	public void Cough() {
-        //Cough SOUND (timer depends on health
-        if (coughTimer <= 0) {
-            headSound.clip = coughClip;
-            headSound.loop = true;
-            headSound.PlayOneShot(headSound.clip);
+        if (firstCough)
+        {
+            firstCough = false;
             coughTimer = coughCD;
         }
-        else {
-            coughTimer -= Time.deltaTime;
+        else
+        {
+            //Cough SOUND (timer depends on health
+            if (coughTimer <= 0)
+            {
+                Debug.Log("Coughing sound");
+
+                headSound.clip = coughClip[Random.Range(0, coughClip.Length)];
+                headSound.loop = true;
+                headSound.PlayOneShot(headSound.clip);
+                coughTimer = coughCD;
+            }
+            else
+            {
+                coughTimer -= Time.deltaTime;
+            }
         }
 	}
 

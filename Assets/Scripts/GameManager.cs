@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static bool Oculus;  //change this
 
@@ -12,15 +13,16 @@ public class GameManager : MonoBehaviour {
     public bool isCompleted = false;
 
     private PlaySong radioScript;
-    public Text objectiveText;
+
+    private AudioSource sound;
+    public AudioSource radioSong;
+    private float radioSongCounter;
 
     //UI controller script
-    public UIController UIController;
-
-    public SceneTransitionController SceneTransitionController;
+    private UIController UIController;
 
     [Header("Tassio Booleans")]
-    [Tooltip ("How many cigarette have to be distributed")]
+    [Tooltip("How many cigarette have to be distributed")]
     public int leftCigarettes;
     public static bool cigaretteDistributionEnabled = false;
     [Tooltip("How many cigarette have been distributed")]
@@ -32,23 +34,43 @@ public class GameManager : MonoBehaviour {
 
     public bool radioInteractionEnabled = false;
 
-
+    public SceneTransitionController sceneTransitionController;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            Scene scene = SceneManager.GetActiveScene(); 
-            SceneManager.LoadScene(scene.name);
-        }
-    } 
+            incrementRadio();
 
-    public void incrementCigarette() {
+
+
+
+            //Scene scene = SceneManager.GetActiveScene();
+            //SceneManager.LoadScene(scene.name);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    public void incrementCigarette()
+    {
         distributedCigarettes++;
         leftCigarettes--;
         UIController.updateLeftCigarettes();
 
-        if (distributedCigarettes > leftCigarettes) {
+        if (distributedCigarettes > leftCigarettes)
+        {
             //completed objective
             CompleteObjective();
             UIController.RemoveObjective();
@@ -70,42 +92,64 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    
+
     public void incrementRadio()
-    {   
+    {
         CompleteObjective();
         UIController.RemoveObjective();
 
         radioInteractionEnabled = false;
+
+
+
+        sceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
+        StartCoroutine(increasePitchandFade(1f));
+        //sceneTransitionController.FadeToBlack();
     }
 
-
-    void Start () {
-        //FADE IN SCREEN
-
-        if (SceneTransitionController = null){
-
-            SceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
-            FadeIn();
+    private IEnumerator increasePitchandFade(float seconds) {        
+        //if increased pitch 30 times: fadeToBlack
+        while (radioSongCounter < 20)
+        {
+            //Fade delay
+            yield return new WaitForSeconds(0.5f);
+            incPitch();
+            //StartCoroutine(increasePitch(0.1f));
         }
 
-        
+        StopAllCoroutines();
+        sceneTransitionController.FadeToBlack();
+    }
 
-        if (UIController == null) {
+    private void incPitch()
+    {
+        radioSongCounter++;
+        radioSong.pitch += 0.02f;
+    }
+
+    void Start()
+    {
+        //FADE IN SCREEN
+        if (sceneTransitionController = null)
+        {
+
+            sceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
+            sceneTransitionController.StartAnimation();
+        }
+
+        if (UIController == null)
+        {
             UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
         }
-        
+
         if (radioScript == null)
         {
             radioScript = GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>();
         }
+
+        sound = GetComponent<AudioSource>();
     }
-
-    public void FadeIn(){
-        
-        SceneTransitionController.StartAnimation();
-
-    }
-
 
     public void CompleteObjective()
     {
@@ -113,15 +157,14 @@ public class GameManager : MonoBehaviour {
 
         Debug.Log("Current objective: " + CurrentObjective);
         //Play completed sound
-
-
+        sound.PlayOneShot(sound.clip);
 
 
         if (CurrentObjective == 1)
         {   //cigarettes
             //make speech bubble over bottle objective appear
 
-            
+
         }
         else if (CurrentObjective == 2)
         {    //bottle
