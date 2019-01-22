@@ -18,11 +18,16 @@ public class UIController : MonoBehaviour {
         RemoveObjective();
     }
 
-    public void updateLeftCigarettes ()
+    public void updateLeftCigarettes()
     {
         objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes).ToString());
     }
-	
+
+    public void updateLeftCakeSlices()
+    {
+        objectiveText.text = ("Distribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices).ToString());
+    }
+
     public void AddObjective(string name) {
 
 
@@ -46,8 +51,16 @@ public class UIController : MonoBehaviour {
             Debug.Log("LungCancer");
 
             GameManager.activateSmoking = true;
-            objectiveText.text = ("Smoke a \n cigarette");
+            objectiveText.text = ("Go talk to \n your aunt");
         }
+
+        else if (name == "MotherTalk")
+        {
+            Debug.Log("go back to mother");
+
+            objectiveText.text = ("Go talk to \n your mother");
+        }
+
         else if (name == "MotherCake")
         {
             Debug.Log("Bring Cake");
@@ -56,6 +69,26 @@ public class UIController : MonoBehaviour {
             objectiveText.text = ("Bring the cake \n to the table");
         }
 
+
+        else if (name == "MotherCakeSlice")
+        {
+            Debug.Log("Distribute Cake");
+            objectiveText.text = ("Disdfgsdrgtribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices).ToString());
+
+
+            //objectiveText.text = ("Bring the cake slices \n to the table Cigarettes left: " + (GameManager.leftCigarettes).ToString());
+
+            //objectiveText.text = ("Bring the cake slices \n to the table");
+        }
+
+        else if (name == "Radio2")
+        {
+            Debug.Log("Turn on radio");
+            objectiveText.text = ("Turn on the radio");
+
+            GameManager.radioInteractionEnabled = true;
+            RadioBubble.gameObject.SetActive(true);
+        }
 
 
     }
@@ -120,10 +153,15 @@ public class UIController : MonoBehaviour {
 
             else if (GameManager.CurrentObjective == 1)
             {
-                objectiveText.text = ("saejlfnbkjsrdhbr");
-                //highlight material/object
+                //Because there is no dialog its in here
+                objectiveText.text = ("cake slices. \n Slices left: " + (GameManager.leftCakeSlices + 1).ToString());
+            }
 
+            else if (GameManager.CurrentObjective == 2)
+            {
+                objectiveText.text = ("Go talk to \n your mother");
 
+                
             }
         }
 

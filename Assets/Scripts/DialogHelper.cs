@@ -11,20 +11,32 @@ public class DialogHelper : MonoBehaviour {
 	void Start () {    
         if (GameManager.level == 2)
         {
-            options[0] = transform.GetChild(0).GetChild(0).gameObject.transform;
-            options[1] = transform.GetChild(0).GetChild(1).gameObject.transform;
+            if (transform.parent.name == "Mother2" )
+            {
+                options[0] = transform.GetChild(0).GetChild(0).gameObject.transform;
+                options[1] = transform.GetChild(0).GetChild(1).gameObject.transform;
 
-            options[1].gameObject.SetActive(false);
+                options[1].gameObject.SetActive(false);
+            }  
+            else
+            {
+                deactivateChildren();
+            }
         }
         else
         {
-            for (int i = 0; i < options.Length; i++)
-            {
-                options[i] = transform.GetChild(0).GetChild(i).gameObject.transform;
-                options[i].gameObject.SetActive(false);
-            }
+            deactivateChildren();
         }
         
+    }
+
+    private void deactivateChildren()
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i] = transform.GetChild(0).GetChild(i).gameObject.transform;
+            options[i].gameObject.SetActive(false);
+        }
     }
 
     public void Helper(int j) {

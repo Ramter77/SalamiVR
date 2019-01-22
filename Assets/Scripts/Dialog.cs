@@ -21,7 +21,9 @@ public class Dialog : MonoBehaviour {
     [Header("Smoker UI options")]
     public DialogHelper dialogHelper;
     public GameObject motherBubble;
+    public BoxCollider motherCollider;
     public GameObject cakeBubble;
+    public GameObject anemoonBubble;
 
     private void Start() {
         if (rightHand == null) {
@@ -89,7 +91,8 @@ public class Dialog : MonoBehaviour {
             {
                 UIController.AddObjective("MotherSmoke");
 
-                dialogHelper.Helper(1);
+                motherBubble.SetActive(false);
+                anemoonBubble.SetActive(true);
             }
             if (number == 2)
             {
@@ -98,6 +101,35 @@ public class Dialog : MonoBehaviour {
                 UIController.AddObjective("MotherCake");
 
                 cakeBubble.SetActive(true);
+            }
+        }
+
+        if (transform.parent.name == "Anemoon Hopster")
+        {
+            if (number == 1)
+            {
+                Debug.Log("asdfasdgfsags");
+                //opens option yes & no
+
+                dialogHelper.Helper(2);
+            }
+            if (number == 2)
+            {
+                Debug.Log("sdgvsdgf");
+                dialogHelper.Helper(2);
+            }
+            if (number == 3)
+            {
+                Debug.Log("trhtrfstasdfasdgfsags");
+                anemoonBubble.SetActive(false);
+                motherBubble.SetActive(true);
+
+                UIController.AddObjective("MotherTalk");
+
+                //activate dialog collider on mother
+                motherCollider.enabled = true;
+
+                GameManager.cakeTalk = true;
             }
         }
     }
@@ -117,63 +149,127 @@ public class Dialog : MonoBehaviour {
             if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
 				Debug.Log("----------------------------Interact-------------------------");
 
-                /*
-				if (!sound.isPlaying) {
-					sound.clip = dialogClip[0];
-					sound.PlayOneShot(sound.clip);	//play dialog file
-				}
-                */
 
-                //if in/exhaling
-                if (sound.clip != dialogClip[0])
+                if (GameManager.cakeTalk)
                 {
-                    sound.clip = dialogClip[0];
-                    sound.PlayOneShot(sound.clip);  //play dialog file
+                    GameManager.cakeTalk = false;
+
+                    if (transform.parent.name == "Mother2")
+                    {
+                        if (sound.clip != dialogClip[2])
+                        {
+                            sound.clip = dialogClip[2];
+                            sound.PlayOneShot(sound.clip);  //play dialog file
+                        }
+                        else
+                        {
+                            if (!sound.isPlaying)
+                            {
+                                sound.clip = dialogClip[2];
+                                sound.PlayOneShot(sound.clip);  //play dialog file
+                            }
+                        }
+
+
+                        UIController.AddObjective("MotherCake");
+                        gameObject.GetComponent<BoxCollider>().enabled = false;
+                        motherBubble.SetActive(false);
+                    }
                 }
+                else if (GameManager.radioTalk)
+                {
+                    if (transform.parent.name == "Mother2")
+                    {
+                        if (sound.clip != dialogClip[3])
+                        {
+                            sound.clip = dialogClip[3];
+                            sound.PlayOneShot(sound.clip);  //play dialog file
+                        }
+                        else
+                        {
+                            if (!sound.isPlaying)
+                            {
+                                sound.clip = dialogClip[3];
+                                sound.PlayOneShot(sound.clip);  //play dialog file
+                            }
+                        }
+                    }
+
+                    UIController.AddObjective("Radio2");
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    motherBubble.SetActive(false);
+                }
+
                 else
                 {
-                    if (!sound.isPlaying)
+
+
+                    /*
+                    if (!sound.isPlaying) {
+                        sound.clip = dialogClip[0];
+                        sound.PlayOneShot(sound.clip);	//play dialog file
+                    }
+                    */
+
+                    //if in/exhaling
+                    if (sound.clip != dialogClip[0])
                     {
                         sound.clip = dialogClip[0];
                         sound.PlayOneShot(sound.clip);  //play dialog file
                     }
+                    else
+                    {
+                        if (!sound.isPlaying)
+                        {
+                            sound.clip = dialogClip[0];
+                            sound.PlayOneShot(sound.clip);  //play dialog file
+                        }
+                    }
+
+
+                    gameObject.GetComponent<BoxCollider>().enabled = false; //disable collider so you can only do it once
+                                                                            //gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
+
+
+                    //level1
+
+
+                    //Activate objective on UI
+                    if (transform.parent.name == "Mother")
+                    {
+                        //Makes the objective text appear and deactivates bubble
+                        UIController.AddObjective("Mother");
+                        motherBubble.SetActive(false);
+
+                        Debug.Log("Pass the cigarettes objective activated");
+                    }
+                    else if (transform.parent.name == "Hubrecht Breukers")
+                    {
+                        //wait a bit before enabling
+                        dialogHelper.Helper(0);
+                    }
+
+                    //level2
+
+                    /*else if (transform.parent.name == "Mother2")
+                    {
+                        //Makes the objective text appear and deactivates bubble
+                        UIController.AddObjective("Mother2");
+                        //motherBubble.SetActive(false);
+
+                        Debug.Log("Smoke the cigarettes and get lung cancer");
+
+                    }
+                    */
+
+                    if (transform.parent.name == "Anemoon Hopster")
+                    {
+                        dialogHelper.Helper(0);
+                        dialogHelper.Helper(1);
+                    }
+
+
                 }
-
-
-                gameObject.GetComponent<BoxCollider>().enabled = false;	//disable collider so you can only do it once
-                //gameObject.GetComponent<smokingLoop>().restartSmoking(smokingDelay);	//restart smoking after delay
-                
-                
-                //level1
-
-                                               
-                //Activate objective on UI
-                if (transform.parent.name == "Mother") {                    
-                    //Makes the objective text appear and deactivates bubble
-                    UIController.AddObjective("Mother");
-                    motherBubble.SetActive(false);
-
-					Debug.Log("Pass the cigarettes objective activated");
-				}
-                else if (transform.parent.name == "Hubrecht Breukers")
-                {
-                    //wait a bit before enabling
-                    dialogHelper.Helper(0);                    
-                }
-
-                //level2
-
-                /*else if (transform.parent.name == "Mother2")
-                {
-                    //Makes the objective text appear and deactivates bubble
-                    UIController.AddObjective("Mother2");
-                    //motherBubble.SetActive(false);
-
-                    Debug.Log("Smoke the cigarettes and get lung cancer");
-                    
-                }
-                */
-               
             }
         }
     }

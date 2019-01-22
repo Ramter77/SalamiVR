@@ -18,6 +18,7 @@ TagManager:
   - SceneTransition
   - cakeLocation
   - fakeCake
+  - cakeSlice
   layers:
   - Default
   - TransparentFX

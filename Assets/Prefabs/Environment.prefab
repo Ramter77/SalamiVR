@@ -21703,6 +21703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
+  mother2Option: {fileID: 0}
 --- !u!114 &114303193082369708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24488,6 +24489,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f0e689b1a85830842b507300b327a9f2, type: 3}
   dialogHelper: {fileID: 114683994930924838}
   motherBubble: {fileID: 0}
+  motherCollider: {fileID: 0}
+  cakeBubble: {fileID: 0}
+  anemoonBubble: {fileID: 0}
 --- !u!114 &114578484527403028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25528,6 +25532,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  mother2Option: {fileID: 0}
 --- !u!114 &114691677645992948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26786,6 +26791,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 87cbd90fa040c1e41b6b60759e7cc268, type: 3}
   dialogHelper: {fileID: 0}
   motherBubble: {fileID: 1532281103525010}
+  motherCollider: {fileID: 0}
+  cakeBubble: {fileID: 0}
+  anemoonBubble: {fileID: 0}
 --- !u!114 &114809394739549062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27730,6 +27738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   options: []
+  mother2Option: {fileID: 0}
 --- !u!114 &114902206896540572
 MonoBehaviour:
   m_ObjectHideFlags: 1

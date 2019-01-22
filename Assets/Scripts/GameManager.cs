@@ -37,12 +37,20 @@ public class GameManager : MonoBehaviour
     public bool radioInteractionEnabled = false;
 
     //level2
-
     public static bool activateSmoking = false;
+
+    //cake
     public GameObject cakeLocation;
+    public static bool cakeTalk = false;
     public static bool activateCake = false;
-    public static bool cakeDistributionEnabled = false;
-    public int distributedCake;
+    public int leftCakeSlices;
+    public static bool cakeDistributionEnabled = false;    
+    public int distributedCakeSlices;
+
+    public GameObject motherBubble;
+    public BoxCollider motherCollider;
+    public static bool radioTalk = false;
+
 
     public SceneTransitionController sceneTransitionController;
 
@@ -82,6 +90,23 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
+        //SlowMo
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (Time.timeScale == 1.0f)
+                Time.timeScale = 0.2f;
+            else
+                Time.timeScale = 1.0f;
+            // Adjust fixed delta time according to timescale
+            // The fixed delta time will now be 0.02 frames per real-time second
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void incrementCigarette()
@@ -120,8 +145,6 @@ public class GameManager : MonoBehaviour
 
         radioInteractionEnabled = false;
 
-
-
         sceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
         StartCoroutine(increasePitchandFade(1f));
         //sceneTransitionController.FadeToBlack();
@@ -136,6 +159,27 @@ public class GameManager : MonoBehaviour
         cakeDistributionEnabled = true;
     }
 
+    public void incrementCakeSlices()
+    {
+        distributedCakeSlices++;
+        leftCakeSlices--;
+        UIController.updateLeftCakeSlices();
+
+        if (distributedCakeSlices > leftCakeSlices)
+        {
+            //completed objective
+            CompleteObjective();
+            UIController.RemoveObjective();
+
+            cakeDistributionEnabled = false;
+
+            motherBubble.SetActive(true);
+            motherCollider.enabled = true;
+
+            radioTalk = true;
+        }
+    }
+
     private IEnumerator increasePitchandFade(float seconds) {        
         //if increased pitch 30 times: fadeToBlack
         while (radioSongCounter < 20)
@@ -146,8 +190,19 @@ public class GameManager : MonoBehaviour
             //StartCoroutine(increasePitch(0.1f));
         }
 
-        StopAllCoroutines();
+        //StopAllCoroutines();
         sceneTransitionController.FadeToBlack();
+
+
+        Debug.Log("next scene");
+        StartCoroutine(loadScene(2f));
+        
+    }
+
+    private IEnumerator loadScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(1);
     }
 
     private void incPitch()
@@ -178,8 +233,11 @@ public class GameManager : MonoBehaviour
 
         sound = GetComponent<AudioSource>();
 
-
-        cakeLocation.SetActive(false);
+        if (level == 2)
+        {
+            GameObject cakeLoc = GameObject.FindGameObjectWithTag("cakeLocation");
+            cakeLoc.SetActive(false);
+        }        
     }
 
     public void CompleteObjective()
@@ -189,17 +247,5 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current objective: " + CurrentObjective);
         //Play completed sound
         sound.PlayOneShot(sound.clip);
-
-
-        if (CurrentObjective == 1)
-        {   //cigarettes
-            //make speech bubble over bottle objective appear
-
-
-        }
-        else if (CurrentObjective == 2)
-        {    //bottle
-
-        }
     }
 }

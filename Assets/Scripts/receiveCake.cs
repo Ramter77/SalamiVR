@@ -20,14 +20,15 @@ public class receiveCake : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (tag == "fakeCake")
+        if (other.tag == "fakeCake")
         {
             Debug.Log("Received fakeCake");
 
             if (GameManager.activateCake)
-            {
+            { 
                 gm.incrementCake();
 
+                Debug.Log("SEts false" + gameObject);
                 gameObject.SetActive(false);                
             }
         }

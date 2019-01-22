@@ -25,7 +25,7 @@ public class PlaySong : MonoBehaviour {
             isRadioPlaying = false;
             GameManager.incrementRadio();
 
-            Debug.Log("End of level 1");
+            Debug.Log("End of level " + GameManager.level.ToString());
         }
 
 

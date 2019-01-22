@@ -71,5 +71,20 @@ public class ReceivePickup : MonoBehaviour {
                 }
             }
 		}
+
+        else if (tag == "cakeSlice")
+        {
+            Debug.Log("Received cake slice");
+
+            if (GameManager.cakeDistributionEnabled)
+            {
+                gm.incrementCakeSlices();
+
+                sound.clip = thanksClip[1];     //thanks 0
+                sound.PlayOneShot(sound.clip);  //play thanks file
+
+                other.gameObject.SetActive(false);                
+            }
+        }
     }
 }

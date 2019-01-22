@@ -34,6 +34,8 @@ public class UIResize : MonoBehaviour {
         canvas.transform.localScale = new Vector3(0.4f,0.4f,0.4f);
         //Debug.Log("yes");
 
+        //Time.timeScale = 0.2f;
+
 
     }
 
@@ -43,7 +45,7 @@ public class UIResize : MonoBehaviour {
         canvas.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         //Debug.Log("no");
 
-
+        //Time.timeScale = 1f;
     }
 
 
