@@ -11,8 +11,6 @@ public class Dialog : MonoBehaviour {
 
     private Hand rightHand;
 
-    public float smokingDelay;	
-
 	[Header ("Sound")]
 	public AudioClip[] dialogClip;
     private AudioSource sound;
@@ -20,6 +18,7 @@ public class Dialog : MonoBehaviour {
 
     [Header("Smoker UI options")]
     public DialogHelper dialogHelper;
+    public BoxCollider hubrechtCollider;
     public GameObject motherBubble;
     public BoxCollider motherCollider;
     public GameObject cakeBubble;
@@ -242,6 +241,8 @@ public class Dialog : MonoBehaviour {
                         //Makes the objective text appear and deactivates bubble
                         UIController.AddObjective("Mother");
                         motherBubble.SetActive(false);
+
+                        hubrechtCollider.enabled = true;
 
                         Debug.Log("Pass the cigarettes objective activated");
                     }

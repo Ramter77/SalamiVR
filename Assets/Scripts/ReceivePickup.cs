@@ -5,7 +5,7 @@ using UnityEngine;
 public class ReceivePickup : MonoBehaviour {
 	//This script handles receiving pickups, playing a thanks sound and changes the UI accordingly
 
-	public GameManager gm;
+	private GameManager gm;
     private toggleModel toggleModelScript;
 
 	[Header ("Sound")]
