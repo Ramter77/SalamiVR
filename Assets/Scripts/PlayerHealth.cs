@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour {
     public float maxHealth = 1000;
     public Text text;
     private HealthIndicator healthIndicatorScript;
+    public float smokeDamage = 1;
 
     [Header("Sound")]
     [Tooltip("Step sound cooldown")]
@@ -35,6 +36,8 @@ public class PlayerHealth : MonoBehaviour {
         healthIndicatorScript = GetComponentInChildren<HealthIndicator>();
 
         h = StartCoroutine(Heal(1));    //heal every second
+
+        coughTimer = coughCD;
     }
 
 	//-----------------------------------------ALWAYS------------------------------------------//
@@ -60,13 +63,17 @@ public class PlayerHealth : MonoBehaviour {
     }
 
 	public void Cough() {
-        if (firstCough)
+
+        /*if (firstCough)
         {
             firstCough = false;
             coughTimer = coughCD;
         }
         else
         {
+        */
+
+        //Debug.Log("qawerfe: " + coughTimer);
             //Cough SOUND (timer depends on health
             if (coughTimer <= 0)
             {
@@ -79,9 +86,10 @@ public class PlayerHealth : MonoBehaviour {
             }
             else
             {
+            Debug.Log("decrease timer");
                 coughTimer -= Time.deltaTime;
             }
-        }
+        //}
 	}
 
 	void DisplayHealth() {
@@ -94,9 +102,11 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void Damage() {
 		if (health > 0) {
-			health--;
+            //health--;
+            Debug.Log(health);
+            health -= smokeDamage;
 
-			//ONLY DO WHEN DAMAGED:
+            //ONLY DO WHEN DAMAGED:
             UpdateHealth();
 			AdjustTunneling();
         }
@@ -107,8 +117,12 @@ public class PlayerHealth : MonoBehaviour {
         healthIndicatorScript.HealthIndicatorUpdate(healthPct);
 
         //Adjust cough CD
-        coughCD = (1 + healthPct * 600) + 60;        
-	}
+        //coughCD = (1 + healthPct * 600) + 60;    
+
+        //coughTimer = coughTimer * (healthPct);
+        Debug.Log("healthPCTY: " + healthPct);
+        coughCD = coughCD * (healthPct);
+    }
 
 	void AdjustTunneling() {
 		//Change effect feather & strengths of tunnel

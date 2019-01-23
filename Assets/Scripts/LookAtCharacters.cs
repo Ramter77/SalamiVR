@@ -14,7 +14,7 @@ public class LookAtCharacters : MonoBehaviour
     void Start()
     {
         baseRotation = transform.rotation;
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("HeadCollider").GetComponent<Transform>();
     }
 
     void Update()
@@ -27,6 +27,6 @@ public class LookAtCharacters : MonoBehaviour
             targetRotation = q;  
         }        
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
     }
 }

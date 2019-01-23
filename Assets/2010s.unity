@@ -4295,8 +4295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveText: {fileID: 345822262}
-  GameManager: {fileID: 0}
-  HubrechtBreukersUI: {fileID: 0}
+  HubrechtBubble: {fileID: 0}
+  RadioBubble: {fileID: 0}
 --- !u!1 &177509962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,13 +4324,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782776546561eb2479b58f8605c8c341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNumber: 0
   CurrentObjective: 0
   isCompleted: 0
-  objectiveText: {fileID: 0}
-  UIController: {fileID: 0}
+  radioSong: {fileID: 0}
   leftCigarettes: 0
   distributedCigarettes: 0
   distributedBottles: 0
+  radioInteractionEnabled: 0
+  cakeLocation: {fileID: 0}
+  leftCakeSlices: 0
+  distributedCakeSlices: 0
+  motherBubble: {fileID: 0}
+  motherCollider: {fileID: 0}
+  sceneTransitionController: {fileID: 0}
 --- !u!4 &177509964
 Transform:
   m_ObjectHideFlags: 0
@@ -7530,9 +7537,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   text: {fileID: 1124420421}
+  smokeDamage: 1
   coughCD: 6000
   headSound: {fileID: 297025965}
-  coughClip: {fileID: 8300000, guid: 7113854dded09be418cf3be1158d444c, type: 3}
+  coughClip:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &333351015
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56235,7 +56246,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1556960661}
+  - {fileID: 1621187328}
   - {fileID: 207276489}
   - {fileID: 61342501}
   - {fileID: 2136518739}
@@ -56245,11 +56256,6 @@ Transform:
   m_Father: {fileID: 707776529}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1556960661 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4388876309763428, guid: af9a1cf30c495b149a87f30cbae16263,
-    type: 2}
-  m_PrefabInternal: {fileID: 1621187327}
 --- !u!1 &1559864112
 GameObject:
   m_ObjectHideFlags: 0
@@ -58030,6 +58036,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af9a1cf30c495b149a87f30cbae16263, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1621187328 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4096184923460118, guid: af9a1cf30c495b149a87f30cbae16263,
+    type: 2}
+  m_PrefabInternal: {fileID: 1621187327}
 --- !u!1 &1623055918
 GameObject:
   m_ObjectHideFlags: 0

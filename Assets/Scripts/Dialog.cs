@@ -24,6 +24,7 @@ public class Dialog : MonoBehaviour {
     public BoxCollider motherCollider;
     public GameObject cakeBubble;
     public GameObject anemoonBubble;
+    public BoxCollider anemoonCollider;
 
     private void Start() {
         if (rightHand == null) {
@@ -93,6 +94,7 @@ public class Dialog : MonoBehaviour {
 
                 motherBubble.SetActive(false);
                 anemoonBubble.SetActive(true);
+                anemoonCollider.enabled = true;
             }
             if (number == 2)
             {

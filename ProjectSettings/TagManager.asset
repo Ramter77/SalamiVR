@@ -19,6 +19,7 @@ TagManager:
   - cakeLocation
   - fakeCake
   - cakeSlice
+  - HeadCollider
   layers:
   - Default
   - TransparentFX

@@ -46,7 +46,7 @@ public class Head : MonoBehaviour {
 		if (debug) { Debug.Log("Entered head collider: " + other); }
 
 		var cigarette = other.gameObject.GetComponent<Cigarette>();
-		if (cigarette) {
+		if (cigarette && GameManager.smokingAllowed) {
 			mCurrentSmoke = StartCoroutine(cigarette.Drag(this));
 
             smokeSound(true);
@@ -58,7 +58,7 @@ public class Head : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         var cigarette = other.gameObject.GetComponent<Cigarette>();
-        if (cigarette)
+        if (cigarette && GameManager.smokingAllowed)
         {
             TestForAudioInput();
         }        
@@ -67,7 +67,7 @@ public class Head : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
 		if (debug) { Debug.Log("Exited head collider: " + other); }
 
-		if (other.gameObject.tag == "Cigarette") {
+		if (other.gameObject.tag == "Cigarette" && GameManager.smokingAllowed) {
 			if (mCurrentSmoke != null) {
 				StopCoroutine(mCurrentSmoke);
 

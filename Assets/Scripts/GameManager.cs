@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public bool radioInteractionEnabled = false;
 
     //level2
-    public static bool activateSmoking = false;
+    public static bool smokingAllowed = false;
 
     //cake
     public GameObject cakeLocation;

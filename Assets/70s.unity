@@ -7417,6 +7417,11 @@ Prefab:
       propertyPath: startDelay
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114759578815797212, guid: 6f1973cfdd922124ab8e110f49b3fdbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1973cfdd922124ab8e110f49b3fdbd, type: 2}
   m_IsPrefabAsset: 0
@@ -15843,6 +15848,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114137753649328124, guid: 43741b920ecd7f44a8b51bd110382374,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43741b920ecd7f44a8b51bd110382374, type: 2}
   m_IsPrefabAsset: 0
@@ -17426,7 +17436,7 @@ Prefab:
     - target: {fileID: 114377728366781804, guid: 7c962d704b1b6fe42b6ef9d13c86667f,
         type: 2}
       propertyPath: maxHealth
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 224176810892480198, guid: 7c962d704b1b6fe42b6ef9d13c86667f,
         type: 2}
@@ -17457,6 +17467,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0.0053654
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377728366781804, guid: 7c962d704b1b6fe42b6ef9d13c86667f,
+        type: 2}
+      propertyPath: smokeDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c962d704b1b6fe42b6ef9d13c86667f, type: 2}
@@ -24869,6 +24884,15 @@ Prefab:
     - target: {fileID: 1003543823754756, guid: 4e6e856782687b9499d35957c9df83b2, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235747047590976, guid: 4e6e856782687b9499d35957c9df83b2, type: 2}
+      propertyPath: m_Name
+      value: Hubrecht Breukers
+      objectReference: {fileID: 0}
+    - target: {fileID: 114556668714688184, guid: 4e6e856782687b9499d35957c9df83b2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6e856782687b9499d35957c9df83b2, type: 2}

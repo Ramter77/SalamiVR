@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour {
         {
             Debug.Log("LungCancer");
 
-            GameManager.activateSmoking = true;
+            GameManager.smokingAllowed = true;
             objectiveText.text = ("Go talk to \n your aunt");
         }
 
