@@ -11,9 +11,20 @@ public class fadeOnCollision : MonoBehaviour {
 		fadeScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<SteamVR_Fade>();
 	}
 
-	private void OnTriggerStay(Collider other) {
-		if (other.tag == "wall") {
-			fadeScript.OnStartFade(Color.green, 1f, true);
+	private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "obstacle") {
+            
+			fadeScript.OnStartFade(Color.black, 1f, false);
 		}
 	}
+
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "obstacle")
+        {
+            fadeScript.OnStartFade(Color.clear, 1f, false);
+        }
+    }
+    
 }

@@ -9,10 +9,17 @@ public class GameManager : MonoBehaviour
     public int levelNumber;
     public static int level;
 
+    //public AudioListener audioListen;
+
     public static bool Oculus;  //change this
 
     public int CurrentObjective = 0;  //level1: cigs, whiskey, radio
     public bool isCompleted = false;
+
+    //audio
+    private bool audioToggle = true;
+    public RawImage audioOn;
+    public RawImage audioOff;
 
     private PlaySong radioScript;
 
@@ -226,6 +233,9 @@ public class GameManager : MonoBehaviour
             UIController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>();
         }
 
+        audioOn = GameObject.FindGameObjectWithTag("audioOn").GetComponent<RawImage>();
+        audioOff = GameObject.FindGameObjectWithTag("audioOff").GetComponent<RawImage>();
+
         if (radioScript == null)
         {
             radioScript = GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>();
@@ -237,7 +247,9 @@ public class GameManager : MonoBehaviour
         {
             GameObject cakeLoc = GameObject.FindGameObjectWithTag("cakeLocation");
             cakeLoc.SetActive(false);
-        }        
+        }
+
+        //audioListen = audioListen.GetComponent<AudioListener>();
     }
 
     public void CompleteObjective()
@@ -247,5 +259,24 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current objective: " + CurrentObjective);
         //Play completed sound
         sound.PlayOneShot(sound.clip);
+    }
+
+    public void muteAudio() {
+
+        audioToggle = !audioToggle;
+        if (audioToggle) {
+            AudioListener.volume = 0f;
+            audioOn.enabled = false;
+            audioOff.enabled = true;
+        }
+
+        if (!audioToggle)
+        {
+            AudioListener.volume = 1f;
+            audioOn.enabled = true;
+            audioOff.enabled = false;
+        }
+
+
     }
 }

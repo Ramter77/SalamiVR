@@ -86,7 +86,7 @@ public class PlayerHealth : MonoBehaviour {
             }
             else
             {
-            Debug.Log("decrease timer");
+            //Debug.Log("decrease timer");
                 coughTimer -= Time.deltaTime;
             }
         //}

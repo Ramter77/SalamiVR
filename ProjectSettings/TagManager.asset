@@ -20,6 +20,9 @@ TagManager:
   - fakeCake
   - cakeSlice
   - HeadCollider
+  - audioOn
+  - audioOff
+  - obstacle
   layers:
   - Default
   - TransparentFX
