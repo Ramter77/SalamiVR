@@ -6,7 +6,10 @@ public class activateBubble : MonoBehaviour {
     //This script activates the speech bubbles over the heads of ppl
 
 	void Start () {
-        disable();
+        if (GameManager.level != 3)
+        {
+            disable();
+        }        
     }
 
     public void enable()

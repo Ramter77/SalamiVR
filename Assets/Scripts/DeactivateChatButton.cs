@@ -7,4 +7,9 @@ public class DeactivateChatButton : MonoBehaviour {
     public void deactivateChatButton() {
         gameObject.SetActive(false);
     }
+
+    public void activateChatButton()
+    {
+        gameObject.SetActive(true);
+    }
 }

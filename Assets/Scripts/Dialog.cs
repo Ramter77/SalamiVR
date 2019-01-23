@@ -50,6 +50,7 @@ public class Dialog : MonoBehaviour {
 	public void playDialog(int number) {
         if (sound.clip != dialogClip[number])
         {
+            sound.Stop();
             sound.clip = dialogClip[number];
             sound.PlayOneShot(sound.clip);  //play dialog file
         }
@@ -57,6 +58,7 @@ public class Dialog : MonoBehaviour {
         {
             if (!sound.isPlaying)
             {
+                sound.Stop();
                 sound.clip = dialogClip[number];
                 sound.PlayOneShot(sound.clip);  //play dialog file
             }
@@ -134,6 +136,25 @@ public class Dialog : MonoBehaviour {
             }
         }
     }
+
+    private void audioHelper(int number)
+    {
+        if (sound.clip != dialogClip[number])
+        {
+            sound.Stop();
+            sound.clip = dialogClip[number];
+            sound.PlayOneShot(sound.clip);  //play dialog file
+        }
+        else
+        {
+            if (!sound.isPlaying)
+            {
+                sound.Stop();
+                sound.clip = dialogClip[number];
+                sound.PlayOneShot(sound.clip);  //play dialog file
+            }
+        }
+    }
 	
 	//If player enters collider interact
 	private void OnTriggerStay(Collider other) {
@@ -157,6 +178,9 @@ public class Dialog : MonoBehaviour {
 
                     if (transform.parent.name == "Mother2")
                     {
+                        audioHelper(2);
+
+                        /*
                         if (sound.clip != dialogClip[2])
                         {
                             sound.clip = dialogClip[2];
@@ -170,6 +194,7 @@ public class Dialog : MonoBehaviour {
                                 sound.PlayOneShot(sound.clip);  //play dialog file
                             }
                         }
+                        */
 
 
                         UIController.AddObjective("MotherCake");
@@ -181,6 +206,9 @@ public class Dialog : MonoBehaviour {
                 {
                     if (transform.parent.name == "Mother2")
                     {
+                        audioHelper(3);
+
+                        /*
                         if (sound.clip != dialogClip[3])
                         {
                             sound.clip = dialogClip[3];
@@ -194,6 +222,7 @@ public class Dialog : MonoBehaviour {
                                 sound.PlayOneShot(sound.clip);  //play dialog file
                             }
                         }
+                        */
                     }
 
                     UIController.AddObjective("Radio2");
@@ -203,7 +232,12 @@ public class Dialog : MonoBehaviour {
 
                 else
                 {
+                    if (GameManager.level == 3)
+                    {
+                        dialogHelper.Helper(0);
+                        dialogHelper.Helper(1);
 
+                    }
 
                     /*
                     if (!sound.isPlaying) {
@@ -213,6 +247,9 @@ public class Dialog : MonoBehaviour {
                     */
 
                     //if in/exhaling
+                    audioHelper(0);
+
+                    /*
                     if (sound.clip != dialogClip[0])
                     {
                         sound.clip = dialogClip[0];
@@ -226,6 +263,7 @@ public class Dialog : MonoBehaviour {
                             sound.PlayOneShot(sound.clip);  //play dialog file
                         }
                     }
+                    */
 
 
                     gameObject.GetComponent<BoxCollider>().enabled = false; //disable collider so you can only do it once
@@ -242,7 +280,7 @@ public class Dialog : MonoBehaviour {
                         UIController.AddObjective("Mother");
                         motherBubble.SetActive(false);
 
-                        hubrechtCollider.enabled = true;
+                        
 
                         Debug.Log("Pass the cigarettes objective activated");
                     }

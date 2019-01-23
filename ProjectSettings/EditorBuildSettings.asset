@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/80s.unity
     guid: 07d393f6f51603d4085164533c10b5ec
+  - enabled: 1
+    path: Assets/2010s.unity
+    guid: 37fb8a69b792da249a790b8bc20c28c4
+  - enabled: 1
+    path: Assets/2020.unity
+    guid: e39fbaebc92328c4db827ec26d392fb3
   m_configObjects: {}

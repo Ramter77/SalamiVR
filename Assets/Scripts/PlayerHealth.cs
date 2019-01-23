@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
     [Header("Sound")]
     [Tooltip("Step sound cooldown")]
     public float coughCD;
-    private bool firstCough = true;
+    //private bool firstCough = true;
     public AudioSource headSound;
     public AudioClip[] coughClip;
     private float coughTimer;
@@ -103,7 +103,7 @@ public class PlayerHealth : MonoBehaviour {
 	public void Damage() {
 		if (health > 0) {
             //health--;
-            Debug.Log(health);
+            //Debug.Log(health);
             health -= smokeDamage;
 
             //ONLY DO WHEN DAMAGED:
@@ -120,7 +120,7 @@ public class PlayerHealth : MonoBehaviour {
         //coughCD = (1 + healthPct * 600) + 60;    
 
         //coughTimer = coughTimer * (healthPct);
-        Debug.Log("healthPCTY: " + healthPct);
+        //Debug.Log("healthPCTY: " + healthPct);
         coughCD = coughCD * (healthPct);
     }
 

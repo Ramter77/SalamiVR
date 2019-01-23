@@ -69,17 +69,18 @@ public class UIController : MonoBehaviour {
             objectiveText.text = ("Bring the cake \n to the table");
         }
 
-
+        /*
         else if (name == "MotherCakeSlice")
         {
-            Debug.Log("Distribute Cake");
-            objectiveText.text = ("Disdfgsdrgtribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices).ToString());
+            Debug.Log("Distribute -=---------------------------- Cake");
+            //objectiveText.text = ("Disdfgsdrgtribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices).ToString());
 
 
             //objectiveText.text = ("Bring the cake slices \n to the table Cigarettes left: " + (GameManager.leftCigarettes).ToString());
 
             //objectiveText.text = ("Bring the cake slices \n to the table");
         }
+        */
 
         else if (name == "Radio2")
         {
@@ -87,7 +88,14 @@ public class UIController : MonoBehaviour {
             objectiveText.text = ("Turn on the radio");
 
             GameManager.radioInteractionEnabled = true;
-            RadioBubble.gameObject.SetActive(true);
+
+            if (GameManager.level == 2 || GameManager.level == 1)
+            {
+                RadioBubble.gameObject.SetActive(true);
+            }
+            
+
+            GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>().turnOffRadio();
         }
 
 
@@ -117,6 +125,9 @@ public class UIController : MonoBehaviour {
 
                 RadioBubble.enable();
                 GameManager.radioInteractionEnabled = true;
+
+                GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>().turnOffRadio();
+
 
                 //highlight material/object
             }
@@ -154,12 +165,12 @@ public class UIController : MonoBehaviour {
             else if (GameManager.CurrentObjective == 1)
             {
                 //Because there is no dialog its in here
-                objectiveText.text = ("cake slices. \n Slices left: " + (GameManager.leftCakeSlices + 1).ToString());
+                objectiveText.text = ("Distribute cake slices \n Slices left: " + (GameManager.leftCakeSlices).ToString());
             }
 
             else if (GameManager.CurrentObjective == 2)
             {
-                objectiveText.text = ("Go talk to \n your mother");
+                objectiveText.text = ("Go talk to \n your mother again");
 
                 
             }

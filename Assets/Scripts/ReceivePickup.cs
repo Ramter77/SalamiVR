@@ -15,8 +15,9 @@ public class ReceivePickup : MonoBehaviour {
     [Header("Booleans")]
 	public bool alreadyReceivedCigarette;
 	private bool alreadyReceivedBottle;
+    public bool alreadyReceivedSlice;
 
-	void Start () {
+    void Start () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		}		
@@ -25,7 +26,7 @@ public class ReceivePickup : MonoBehaviour {
         //toggleModelScript = transform.parent.parent.Find("NCCigarette").GetComponent<toggleModel>();
 
         //Debug.Log(transform.parent.parent.name);
-        toggleModelScript = transform.parent.parent.GetChild(0).GetChild(0).GetComponent<toggleModel>();
+        toggleModelScript = transform.parent.parent.GetChild(0).GetChild(0).GetChild(0).GetComponent<toggleModel>();
     }
 	
 	private void OnTriggerEnter(Collider other) {
@@ -49,6 +50,7 @@ public class ReceivePickup : MonoBehaviour {
                     sound.clip = thanksClip[0];     //thanks 0
                     sound.PlayOneShot(sound.clip);  //play thanks file
 
+                    Debug.Log("seadfsef" + other.transform.parent.gameObject);
                     other.gameObject.SetActive(false);
                 }
             }
@@ -74,16 +76,23 @@ public class ReceivePickup : MonoBehaviour {
 
         else if (tag == "cakeSlice")
         {
-            Debug.Log("Received cake slice");
+            Debug.Log("Received cake slice: cakeDist? " + GameManager.cakeDistributionEnabled);
 
             if (GameManager.cakeDistributionEnabled)
             {
-                gm.incrementCakeSlices();
+                if (!alreadyReceivedSlice)
+                {
+                    alreadyReceivedSlice = true;
 
-                sound.clip = thanksClip[1];     //thanks 0
-                sound.PlayOneShot(sound.clip);  //play thanks file
+                    Debug.Log("cake slice");
 
-                other.gameObject.SetActive(false);                
+                    gm.incrementCakeSlices();
+
+                    sound.clip = thanksClip[1];     //thanks 0
+                    sound.PlayOneShot(sound.clip);  //play thanks file
+
+                    other.gameObject.SetActive(false);
+                }
             }
         }
     }

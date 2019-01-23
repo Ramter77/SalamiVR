@@ -8,11 +8,16 @@ public class toggleModel : MonoBehaviour {
     private smokingLoop smokingLoopScript;
 
     void Start () {
-        smokingLoopScript = transform.parent.GetComponent<smokingLoop>();
+        smokingLoopScript = transform.parent.parent.GetComponent<smokingLoop>();
         smokingLoopScript.enabled = false;
 
         cigModel = GetComponent<MeshRenderer>();
         cigModel.enabled = false;
+    }
+
+    public void stopSmoking()
+    {
+        smokingLoopScript.enabled = false;
     }
     
     public void enableModel()

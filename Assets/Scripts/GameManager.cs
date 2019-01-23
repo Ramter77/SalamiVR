@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     [Tooltip("How many cigarette have been distributed")]
     public int distributedCigarettes;
 
+    public BoxCollider hubrechtCollider;
+
     public static bool bottleDistributionEnabled = false;
     [Tooltip("How many bottles have been distributed")]
     public int distributedBottles;
@@ -74,18 +76,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            incrementRadio();
-
-
-
-
-            //Scene scene = SceneManager.GetActiveScene();
-            //SceneManager.LoadScene(scene.name);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(0);
         }
@@ -97,9 +88,19 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        //Skip objective
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            skipObjective();
+        }
 
         //SlowMo
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.L))
         {
             if (Time.timeScale == 1.0f)
                 Time.timeScale = 0.2f;
@@ -116,6 +117,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void skipObjective()
+    {
+        //test
+        CompleteObjective();
+        UIController.RemoveObjective();
+    }
+
     public void incrementCigarette()
     {
         distributedCigarettes++;
@@ -129,6 +137,8 @@ public class GameManager : MonoBehaviour
             UIController.RemoveObjective();
 
             cigaretteDistributionEnabled = false;
+
+            hubrechtCollider.enabled = true;
         }
     }
 
@@ -141,7 +151,7 @@ public class GameManager : MonoBehaviour
             CompleteObjective();
             UIController.RemoveObjective();
 
-            bottleDistributionEnabled = false;
+            bottleDistributionEnabled = false;            
         }
     }    
 
@@ -202,14 +212,14 @@ public class GameManager : MonoBehaviour
 
 
         Debug.Log("next scene");
-        StartCoroutine(loadScene(2f));
+        StartCoroutine(loadScene(10.5f));
         
     }
 
     private IEnumerator loadScene(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(GameManager.level);
     }
 
     private void incPitch()
@@ -221,7 +231,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //FADE IN SCREEN
-        if (sceneTransitionController = null)
+        if (sceneTransitionController == null)
         {
 
             sceneTransitionController = GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<SceneTransitionController>();
@@ -236,7 +246,7 @@ public class GameManager : MonoBehaviour
         audioOn = GameObject.FindGameObjectWithTag("audioOn").GetComponent<RawImage>();
         audioOff = GameObject.FindGameObjectWithTag("audioOff").GetComponent<RawImage>();
 
-        if (radioScript == null)
+        if (radioScript == null && (level != 3 || level != 4))
         {
             radioScript = GameObject.FindGameObjectWithTag("Radio").GetComponent<PlaySong>();
         }

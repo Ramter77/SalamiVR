@@ -23,7 +23,7 @@ public class smokingLoop : MonoBehaviour {
 
         sound = GetComponent<AudioSource>();
 
-        restartSmoking(startDelay);        
+        restartSmoking(startDelay);               
 	}
 
     public void restartSmoking(float delay) {

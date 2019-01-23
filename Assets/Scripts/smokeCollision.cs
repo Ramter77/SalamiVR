@@ -28,7 +28,7 @@ public class smokeCollision : MonoBehaviour {
         for (int i = 0; i < numEnter; i++)
         {
             ParticleSystem.Particle p = enter[i];
-            p.startColor = new Color32(255, 0, 0, 255);
+            //p.startColor = new Color32(255, 0, 0, 255);
             enter[i] = p;
 
 			//Debug.Log("Smoke particle collided with player");
@@ -39,7 +39,7 @@ public class smokeCollision : MonoBehaviour {
         for (int i = 0; i < numExit; i++)
         {
             ParticleSystem.Particle p = exit[i];
-            p.startColor = new Color32(0, 255, 0, 255);
+            //p.startColor = new Color32(0, 255, 0, 255);
             exit[i] = p;
         }
 
