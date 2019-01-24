@@ -7105,6 +7105,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 198359065794704368, guid: 84fbff825ab2ebd4f848e99a1daffc93,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 329809071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84fbff825ab2ebd4f848e99a1daffc93, type: 2}
   m_IsPrefabAsset: 0
@@ -12983,6 +12988,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -167.34901
       objectReference: {fileID: 0}
+    - target: {fileID: 198029217543322468, guid: c2931df2930f1ae499918499fde12bb3,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 329809071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2931df2930f1ae499918499fde12bb3, type: 2}
   m_IsPrefabAsset: 0
@@ -26578,6 +26588,11 @@ Prefab:
       propertyPath: m_Name
       value: NONSmoker (Female) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 198359065794704368, guid: 84fbff825ab2ebd4f848e99a1daffc93,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 329809071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84fbff825ab2ebd4f848e99a1daffc93, type: 2}
   m_IsPrefabAsset: 0

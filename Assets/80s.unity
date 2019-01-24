@@ -2565,6 +2565,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0083778
       objectReference: {fileID: 0}
+    - target: {fileID: 198359065794704368, guid: 84fbff825ab2ebd4f848e99a1daffc93,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84fbff825ab2ebd4f848e99a1daffc93, type: 2}
   m_IsPrefabAsset: 0
@@ -9195,6 +9200,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198334552949732210, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
   m_IsPrefabAsset: 0
@@ -10132,6 +10142,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180.73099
       objectReference: {fileID: 0}
+    - target: {fileID: 198334552949732210, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
   m_IsPrefabAsset: 0
@@ -16053,6 +16068,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.008376
       objectReference: {fileID: 0}
+    - target: {fileID: 198219647057816950, guid: 97f911167acafe142830b455d32e1274,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f911167acafe142830b455d32e1274, type: 2}
   m_IsPrefabAsset: 0
@@ -16820,6 +16840,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 198219647057816950, guid: 97f911167acafe142830b455d32e1274,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f911167acafe142830b455d32e1274, type: 2}
   m_IsPrefabAsset: 0
