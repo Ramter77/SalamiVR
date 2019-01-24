@@ -80,10 +80,10 @@ public class Movement : MonoBehaviour
         //MOVE
 
         //OCULUS//
-        //bool move = button = SteamVR_Input._default.inActions.GrabPinch.GetState(leftHand.handType);
+        bool move = SteamVR_Input._default.inActions.GrabPinch.GetState(leftHand.handType);
 
         //VIVE//
-        bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
+        //bool move = SteamVR_Input._default.inActions.Teleport.GetState(leftHand.handType);
 
 
         Vector2 move2 = (SteamVR_Input.platformer.inActions.Move.GetAxis(leftHand.handType));

@@ -165,10 +165,10 @@ public class Dialog : MonoBehaviour {
             //if player presses the interaction button
 
             //OCULUS//
-            //if (SteamVR_Input._default.inActions.GrabPinch.GetState(rightHand.handType)) { 
+            if (SteamVR_Input._default.inActions.GrabPinch.GetState(rightHand.handType)) { 
 
             //VIVE//
-            if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
+            //if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
 				Debug.Log("----------------------------Interact-------------------------");
 
 
