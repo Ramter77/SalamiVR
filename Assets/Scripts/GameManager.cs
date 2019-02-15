@@ -259,6 +259,11 @@ public class GameManager : MonoBehaviour
             cakeLoc.SetActive(false);
         }
 
+        if (level == 3)
+        {
+            UIController.AddObjective("Mathies Slagman");
+        }
+
         //audioListen = audioListen.GetComponent<AudioListener>();
     }
 

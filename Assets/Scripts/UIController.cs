@@ -69,6 +69,18 @@ public class UIController : MonoBehaviour {
             objectiveText.text = ("Bring the cake \n to the table");
         }
 
+        else if (name == "Mathies Slagman")
+        {
+            Debug.Log("Talk to Mathies Slagman");
+            objectiveText.text = ("Go talk to \n Mathies Slagman");
+        }
+
+        else if (name == "Radio3")
+        {
+            Debug.Log("Radio3");
+            objectiveText.text = ("Go turn on \n the Radio");
+        }
+
         /*
         else if (name == "MotherCakeSlice")
         {
