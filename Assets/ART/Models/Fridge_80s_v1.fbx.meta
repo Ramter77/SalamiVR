@@ -78,7 +78,32 @@ ModelImporter:
     4300018: M_FridgeBox_BottomRight_80s
     4300020: M_FridgeDoor_Top_Body_80s
     4300022: M_FridgeDoor_Top_Handle_80s
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 0d5fb166a5d6cc24bb70a27c01f9652e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: cafc9f026244fa94f97a8cfd35aeeac0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 3a21982a534c14c44bd1b07505135528, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: 9e755072796a711408c240b9839b8620, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: 9de30eb310593824cba03df47c041206, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

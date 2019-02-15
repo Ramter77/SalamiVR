@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: P_Vase_70s_1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VaseTexture_v2
+    second: {fileID: 2100000, guid: ead051a29bbb42e4b86cbb7c87349753, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

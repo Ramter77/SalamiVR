@@ -62,7 +62,17 @@ ModelImporter:
     4300016: P_CakeSlice_8_70s
     4300018: P_CakeSlice_10_70s
     4300020: P_CakeSlice_9_70s
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CakePiece_Texture
+    second: {fileID: 2100000, guid: e5c00084c028c1042bd6af59d8cfc050, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CakePlateTexture
+    second: {fileID: 2100000, guid: 32715cb9f941df34290887cced0ad773, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

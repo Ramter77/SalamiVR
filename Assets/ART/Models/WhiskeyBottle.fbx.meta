@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: T_WhiskeyBottle_80s
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiskyBottle_Texture
+    second: {fileID: 2100000, guid: b4d3baf44bd698a40b006aa9ea318525, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

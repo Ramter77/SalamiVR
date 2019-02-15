@@ -30,7 +30,12 @@ ModelImporter:
     4300002: PlaceHolderPerson_1_Head
     4300004: PlaceHolderPerson_2_Body
     4300006: PlaceHolderPerson_2_Head
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CharacterTextureMat
+    second: {fileID: 2100000, guid: f0647cd22f53bc24e83470103304d6df, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

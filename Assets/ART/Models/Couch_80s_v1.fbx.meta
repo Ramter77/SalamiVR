@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: U_Couch_80s
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert31
+    second: {fileID: 2100000, guid: ce103cea8e6ff0845b3ef71ec6970a17, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

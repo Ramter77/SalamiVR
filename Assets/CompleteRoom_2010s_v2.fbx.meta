@@ -806,7 +806,112 @@ ModelImporter:
     4300306: pCube547
     4300308: pCube549
     4300310: pCube546
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe1_1
+    second: {fileID: 2100000, guid: b01c85bd672f0184fa9c695630c7046d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe1_2
+    second: {fileID: 2100000, guid: 16d0918a01bc8844f80437fe4a4847cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe1_3
+    second: {fileID: 2100000, guid: 3449ac47edf5152499d24800d30b04a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe2_1
+    second: {fileID: 2100000, guid: afb58721d017ab145b8f40fef53f7d2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe2_2
+    second: {fileID: 2100000, guid: d72cf507e264feb4db38dd2e7fa4d990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe2_3
+    second: {fileID: 2100000, guid: 4425848fbf1ab7342b588f78bcd4a56a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe3_1
+    second: {fileID: 2100000, guid: e354cfce8a4de7541bd9a1a2356c1da9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe3_2
+    second: {fileID: 2100000, guid: 8be82dc20cc9d0d48afa6b71e2dbd58c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CafeMat_2010s_Cafe3_3
+    second: {fileID: 2100000, guid: cbbae0edf8a9a694a930fcd0935c7569, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_2010s_1
+    second: {fileID: 2100000, guid: 24c30c0e98d06a84582aa1f605ff5916, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_2010s_2
+    second: {fileID: 2100000, guid: 1d7f15391636c0b4f91de09b918244d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_2010s_3
+    second: {fileID: 2100000, guid: d6a94502114b2474582f989724ebce63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_2010s_4
+    second: {fileID: 2100000, guid: ada48583a390d3945b29ce398c93f91d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StreetLightMat_2010s_1
+    second: {fileID: 2100000, guid: 8e9b7d666f992e94c86dbb518c46648e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StreetLightMat_2010s_2
+    second: {fileID: 2100000, guid: cc59bf3980f461342b818eb043238fa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StreetLightMat_2010s_3
+    second: {fileID: 2100000, guid: 735af805e9c6c274aa96b3c5fbe1d5ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeLeaves_2010s
+    second: {fileID: 2100000, guid: 5cda39fd977e6ff46a926732af81ef72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowMat_2010s_1
+    second: {fileID: 2100000, guid: 56b23786c9c3ea04a95853343a390354, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowMat_2010s_2
+    second: {fileID: 2100000, guid: f8851de0f79542e4b9427874fb88405b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: d726f51224dc02f4ea9bb2d57a7a6bac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 5152b198f5a3c9d4ab1132399ba1acaf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
