@@ -342,12 +342,117 @@ ModelImporter:
     4300114: U_FridgeBase_70s
     4300116: U_FridgeLayers_70_s
     4300118: U_Ceiling_70s
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabinetTexture
+    second: {fileID: 2100000, guid: 34127304e83a85e4f85e47f2303cdad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CouchTexture
+    second: {fileID: 2100000, guid: ce08f3d6ada49de4d8b519c74061b1a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CounterTexture
+    second: {fileID: 2100000, guid: afd9ea6694c9dbb4a9703da1f244923a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DinnerTableTexture
+    second: {fileID: 2100000, guid: 9b43e6ba7c88ca84f9c6968651d7e4e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ExhaustHoodTexture
+    second: {fileID: 2100000, guid: bec37b352876aa24eb83d8aa49d25796, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FireplaceTexture
+    second: {fileID: 2100000, guid: 6c5b50b5becc5a44494d22bf21ce9ffa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FloorTexture_Test
+    second: {fileID: 2100000, guid: 56167fd2f33653642913dad89f6b30e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FridgeDoorBottomTexture
+    second: {fileID: 2100000, guid: 99a26d52bbfb88f44bc314b6f3ae20ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FridgeLayersTexture
+    second: {fileID: 2100000, guid: b0d07ab073ea1ac4290d0418701623bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FridgeTexture
+    second: {fileID: 2100000, guid: ca779e09be3740441b98c63e9a4fbd35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FurnaceTexture
+    second: {fileID: 2100000, guid: 81ca12909577ea84ea7f955a1e1d85e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FurnaceWheelTexture
+    second: {fileID: 2100000, guid: 29345ef3d416e8c43b445d7a47cb0351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shade1
+    second: {fileID: 2100000, guid: cdc0f5e787eaf5b40a98a0db60e972ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SideTableTexture
+    second: {fileID: 2100000, guid: 46890ae240846c340a3c2ae4b7a4b6eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TVTableTexture
+    second: {fileID: 2100000, guid: 6664d410064cefb438798fbdb64dc86d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tv_Texture_Test
+    second: {fileID: 2100000, guid: 47c5e5903b3a099468b14229fc04b6b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallTexture
+    second: {fileID: 2100000, guid: d243f795344c51e40af5ac8ad7b21d68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 342b084e5f9779843b8795d44e3839a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11
+    second: {fileID: 2100000, guid: 1662aa783eb020746b793d145199e5bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 7f5666910aaf1104c8741c340ecdd750, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: e815dc032b0fb424eaf9a1cab76b37ef, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
