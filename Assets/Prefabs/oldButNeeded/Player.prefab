@@ -2460,6 +2460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   text: {fileID: 114604698981507048}
+  smokeDamage: 1
   coughCD: 6000
   headSound: {fileID: 82982445391057604}
   coughClip:
@@ -3242,6 +3243,7 @@ MonoBehaviour:
   stepCD: 0.4
   playerSound: {fileID: 82688572804504098}
   stepsSound: {fileID: 8300000, guid: 536a6a2965de95d499dcd02d124734c8, type: 3}
+  actionSet: {fileID: 0}
 --- !u!114 &114917554914784312
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -208,13 +208,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782776546561eb2479b58f8605c8c341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNumber: 0
   CurrentObjective: 0
   isCompleted: 0
+  audioOn: {fileID: 0}
+  audioOff: {fileID: 0}
   radioSong: {fileID: 0}
   leftCigarettes: 2
   distributedCigarettes: 0
+  hubrechtCollider: {fileID: 0}
   distributedBottles: 0
   radioInteractionEnabled: 0
+  cakeLocation: {fileID: 0}
+  leftCakeSlices: 0
+  distributedCakeSlices: 0
+  motherBubble: {fileID: 0}
+  motherCollider: {fileID: 0}
   sceneTransitionController: {fileID: 0}
 --- !u!114 &114751122204909714
 MonoBehaviour:

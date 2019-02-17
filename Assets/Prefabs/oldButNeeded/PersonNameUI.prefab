@@ -173,6 +173,7 @@ MonoBehaviour:
   options:
   - {fileID: 224343705538930066}
   - {fileID: 0}
+  mother2Option: {fileID: 0}
 --- !u!114 &114217520635976410
 MonoBehaviour:
   m_ObjectHideFlags: 1

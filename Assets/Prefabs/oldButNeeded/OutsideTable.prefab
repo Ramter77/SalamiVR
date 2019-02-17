@@ -3397,6 +3397,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
+  alreadyReceivedSlice: 0
 --- !u!114 &114308652268529164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3423,6 +3424,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
+  alreadyReceivedSlice: 0
 --- !u!114 &114322056701196316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3455,6 +3457,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
+  alreadyReceivedSlice: 0
 --- !u!114 &114331824059033952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3544,6 +3547,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
+  alreadyReceivedSlice: 0
 --- !u!114 &114508859571590076
 MonoBehaviour:
   m_ObjectHideFlags: 1
