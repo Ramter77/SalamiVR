@@ -2016,8 +2016,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.6327787, b: 0.3987629, a: 1}
-  m_Intensity: 4
-  m_Range: 3
+  m_Intensity: 10.53
+  m_Range: 2.06
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -2576,8 +2576,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.54256207, b: 0.2688679, a: 1}
-  m_Intensity: 0.35
-  m_Range: 10
+  m_Intensity: 1.99
+  m_Range: 2.97
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -41628,8 +41628,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.6327787, b: 0.3987629, a: 1}
-  m_Intensity: 4
-  m_Range: 3
+  m_Intensity: 10.53
+  m_Range: 2.06
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -41637,8 +41637,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.6
-    m_Bias: 0
-    m_NormalBias: 0.257
+    m_Bias: 0.05
+    m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -53161,7 +53161,7 @@ GameObject:
   - component: {fileID: 1364874601}
   - component: {fileID: 1364874608}
   - component: {fileID: 1364874607}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: VRCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -53311,7 +53311,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
@@ -53329,7 +53329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: febc0da121ee7db4ba2e2ccad950a9ca, type: 2}
   isGlobal: 0
   blendDistance: 0
   weight: 1
@@ -59229,8 +59229,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.6327787, b: 0.3987629, a: 1}
-  m_Intensity: 4
-  m_Range: 3
+  m_Intensity: 10.53
+  m_Range: 2.06
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -59238,8 +59238,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.6
-    m_Bias: 0
-    m_NormalBias: 0.257
+    m_Bias: 0.05
+    m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -78299,8 +78299,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9716981, g: 0.6327787, b: 0.3987629, a: 1}
-  m_Intensity: 4
-  m_Range: 3
+  m_Intensity: 10.53
+  m_Range: 2.06
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

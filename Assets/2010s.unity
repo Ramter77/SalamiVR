@@ -40461,6 +40461,7 @@ Transform:
   - {fileID: 147116468}
   - {fileID: 316231917}
   - {fileID: 1221800843}
+  - {fileID: 1616742174}
   - {fileID: 319937877}
   - {fileID: 36312870}
   - {fileID: 839344554}
@@ -40468,7 +40469,6 @@ Transform:
   - {fileID: 473424974}
   - {fileID: 808453557}
   - {fileID: 1070427278}
-  - {fileID: 1616742174}
   - {fileID: 76904065}
   - {fileID: 682930311}
   - {fileID: 2047916004}
@@ -81555,7 +81555,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
@@ -89275,7 +89275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 819952645}
-  m_RootOrder: 21
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1623322321
 Transform:
