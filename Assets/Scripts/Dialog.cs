@@ -204,6 +204,9 @@ public class Dialog : MonoBehaviour {
                 }
                 else if (GameManager.radioTalk)
                 {
+                    Debug.Log("twsat this");
+
+
                     if (transform.parent.name == "Mother2")
                     {
                         audioHelper(3);

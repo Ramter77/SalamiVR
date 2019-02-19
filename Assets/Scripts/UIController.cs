@@ -20,12 +20,12 @@ public class UIController : MonoBehaviour {
 
     public void updateLeftCigarettes()
     {
-        objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes).ToString());
+        objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes - 1).ToString());
     }
 
     public void updateLeftCakeSlices()
     {
-        objectiveText.text = ("Distribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices).ToString());
+        objectiveText.text = ("Distribute cake slices. \n Slices left: " + (GameManager.leftCakeSlices - 1).ToString());
     }
 
     public void AddObjective(string name) {
@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour {
 
         if (name == "Mother") {
             GameManager.cigaretteDistributionEnabled = true;
-            objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes).ToString());
+            objectiveText.text = ("Distribute cigarettes \n around. \n Cigarettes left: " + (GameManager.leftCigarettes - 1).ToString());
         }
 
         else if (name == "Hubrecht Breukers")
@@ -177,7 +177,7 @@ public class UIController : MonoBehaviour {
             else if (GameManager.CurrentObjective == 1)
             {
                 //Because there is no dialog its in here
-                objectiveText.text = ("Distribute cake slices \n Slices left: " + (GameManager.leftCakeSlices).ToString());
+                objectiveText.text = ("Distribute cake slices \n Slices left: " + (GameManager.leftCakeSlices - 1).ToString());
             }
 
             else if (GameManager.CurrentObjective == 2)

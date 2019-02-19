@@ -5975,7 +5975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thanksClip:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
-  - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
+  - {fileID: 8300000, guid: ce277239a5deaab47a6bc4fd11b38be1, type: 3}
   alreadyReceivedCigarette: 1
   alreadyReceivedSlice: 0
 --- !u!65 &63318024
@@ -6300,7 +6300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thanksClip:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
-  - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
+  - {fileID: 8300000, guid: 525e1962cdbe5404293921b454f85971, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
 --- !u!65 &67800787
@@ -7635,7 +7635,7 @@ GameObject:
   - component: {fileID: 108094313}
   - component: {fileID: 108094314}
   m_Layer: 0
-  m_Name: Wind
+  m_Name: WindSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7665,7 +7665,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 92b7b19a16f6a7d4793091adbb61f4b0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.225
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7674,9 +7674,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 4
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -7709,7 +7709,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -21927,7 +21927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thanksClip:
   - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
-  - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
+  - {fileID: 8300000, guid: 23618b95eeae138438f5d35727cd59fe, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
 --- !u!65 &440640812
@@ -24322,7 +24322,7 @@ GameObject:
   - component: {fileID: 561947410}
   m_Layer: 0
   m_Name: 70sRadio
-  m_TagString: Radio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30087,7 +30087,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599169882}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93d303df12262d46944bd64bd26b3c7, type: 3}
   m_Name: 
@@ -30719,7 +30719,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632510109}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -36735,7 +36735,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 886292851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -36976,6 +36976,71 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!1001 &900369605
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.522
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.019309402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.38305086
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.9237273
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731767007187708, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -314.954
+      objectReference: {fileID: 0}
+    - target: {fileID: 198334552949732210, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1567928154}
+    - target: {fileID: 23944421477132310, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341629344454334, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775199168246178, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+      propertyPath: m_Name
+      value: Smoker (Male) (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &908410632
 GameObject:
   m_ObjectHideFlags: 0
@@ -66273,8 +66338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
-  - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
+  - {fileID: 8300000, guid: ec0cf939c4f4c1b438d592ed927ff85f, type: 3}
+  - {fileID: 8300000, guid: ec0cf939c4f4c1b438d592ed927ff85f, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
 --- !u!65 &1162061762
@@ -72960,6 +73025,26 @@ Prefab:
       propertyPath: TriggerModule.collisionShape0
       value: 
       objectReference: {fileID: 1567928154}
+    - target: {fileID: 23944421477132310, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114341629344454334, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897069892036808, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: thanksClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ce277239a5deaab47a6bc4fd11b38be1, type: 3}
+    - target: {fileID: 114897069892036808, guid: b4c97931da02f8c47926ad7f09316581,
+        type: 2}
+      propertyPath: thanksClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e2b16d482eaec9c4684dd4e9b1674263, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c97931da02f8c47926ad7f09316581, type: 2}
   m_IsPrefabAsset: 0
@@ -73705,7 +73790,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332359988}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -73795,7 +73880,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350866602}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -75213,7 +75298,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1393551694}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93d303df12262d46944bd64bd26b3c7, type: 3}
   m_Name: 
@@ -78842,6 +78927,8 @@ GameObject:
   - component: {fileID: 1571468669}
   - component: {fileID: 1571468668}
   - component: {fileID: 1571468667}
+  - component: {fileID: 1571468674}
+  - component: {fileID: 1571468673}
   m_Layer: 10
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -78995,10 +79082,85 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1571468673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571468665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 6e7d488953951274386eaaec3ad8c397, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1571468674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571468665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1571468666}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1578546318
 GameObject:
   m_ObjectHideFlags: 0
@@ -82960,8 +83122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8be7e16a86d9d4baf65a6684839986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  mThreshold: 2
+  debug: 1
+  mThreshold: 0
   isInput: 0
   mParticleSystem: {fileID: 1182660142}
   audioSource: {fileID: 1774508156}
@@ -84901,7 +85063,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870684224}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93d303df12262d46944bd64bd26b3c7, type: 3}
   m_Name: 
@@ -89961,7 +90123,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1893584807}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93d303df12262d46944bd64bd26b3c7, type: 3}
   m_Name: 
