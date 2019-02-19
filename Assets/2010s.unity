@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 1
   m_FogDensity: 1
@@ -39327,7 +39327,7 @@ Prefab:
     - target: {fileID: 114109342111737206, guid: a07e2de09dd6db8439fb2dac6022d87c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114109342111737206, guid: a07e2de09dd6db8439fb2dac6022d87c,
         type: 2}
@@ -39343,6 +39343,21 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 65223819423278458, guid: a07e2de09dd6db8439fb2dac6022d87c,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65223819423278458, guid: a07e2de09dd6db8439fb2dac6022d87c,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532170923506100, guid: a07e2de09dd6db8439fb2dac6022d87c,
+        type: 2}
+      propertyPath: m_Text
+      value: "Yeah I've been \ntrying to \navoid you\r\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a07e2de09dd6db8439fb2dac6022d87c, type: 2}
@@ -40458,10 +40473,10 @@ Transform:
   - {fileID: 1623322321}
   - {fileID: 1813486599}
   - {fileID: 291531458}
+  - {fileID: 1616742174}
   - {fileID: 147116468}
   - {fileID: 316231917}
   - {fileID: 1221800843}
-  - {fileID: 1616742174}
   - {fileID: 319937877}
   - {fileID: 36312870}
   - {fileID: 839344554}
@@ -89275,7 +89290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 819952645}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1623322321
 Transform:
