@@ -32751,7 +32751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
+  - {fileID: 8300000, guid: b8eedb0a42e0a354b9c10e01c7bf9848, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
@@ -41965,7 +41965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
+  - {fileID: 8300000, guid: ec0cf939c4f4c1b438d592ed927ff85f, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
@@ -60629,7 +60629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
+  - {fileID: 8300000, guid: 389311df363dd0241a667669ff1aa552, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
@@ -78024,7 +78024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
+  - {fileID: 8300000, guid: 2c0c819ee137f974e8ddfad0cd465a84, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
@@ -85141,7 +85141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thanksClip:
-  - {fileID: 8300000, guid: 7cb6016b06349604eade6d9cd070d76f, type: 3}
+  - {fileID: 8300000, guid: 23618b95eeae138438f5d35727cd59fe, type: 3}
   - {fileID: 8300000, guid: 73e065ee4b0df3a4ab4d7243ef790086, type: 3}
   alreadyReceivedCigarette: 0
   alreadyReceivedSlice: 0
