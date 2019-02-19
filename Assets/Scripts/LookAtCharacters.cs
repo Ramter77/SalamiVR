@@ -13,6 +13,11 @@ public class LookAtCharacters : MonoBehaviour
 
     void Start()
     {
+        if (GameManager.level == 3)
+        {
+            maxAngle = maxAngle / 2f;
+        }
+
         baseRotation = transform.rotation;
         target = GameObject.FindGameObjectWithTag("HeadCollider").GetComponent<Transform>();
     }

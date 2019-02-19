@@ -164,10 +164,6 @@ public class Dialog : MonoBehaviour {
         //if colliding with Player collider		
         if (other.tag == "Head")
         {
-            //Debug.Log("asdfs   " + other);
-            Debug.Log(SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType));
-
-
             //Debug.Log("-------// Colliding with player //-------------");
             //if player presses the interaction button
 
@@ -176,10 +172,7 @@ public class Dialog : MonoBehaviour {
 
             //VIVE//
             //if (SteamVR_Input._default.inActions.Teleport.GetState(rightHand.handType)) {
-				Debug.Log("----------------------------Interact-------------------------");
-
-
-                
+				Debug.Log("----------------------------Interact-------------------------");                
 
                 if (GameManager.cakeTalk)
                 {
