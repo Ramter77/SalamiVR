@@ -884,6 +884,39 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4512642439007660, guid: 40a1dd4240dabf8488bb56aaddecbc96, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 215888410945722352, guid: 40a1dd4240dabf8488bb56aaddecbc96,
+        type: 2}
+      propertyPath: m_BoxSize.z
+      value: 63.34324
+      objectReference: {fileID: 0}
+    - target: {fileID: 215888410945722352, guid: 40a1dd4240dabf8488bb56aaddecbc96,
+        type: 2}
+      propertyPath: m_BoxOffset.z
+      value: 3.167263
+      objectReference: {fileID: 0}
+    - target: {fileID: 215888410945722352, guid: 40a1dd4240dabf8488bb56aaddecbc96,
+        type: 2}
+      propertyPath: m_BoxSize.x
+      value: 56.58914
+      objectReference: {fileID: 0}
+    - target: {fileID: 215888410945722352, guid: 40a1dd4240dabf8488bb56aaddecbc96,
+        type: 2}
+      propertyPath: m_BoxOffset.x
+      value: 1.4288254
+      objectReference: {fileID: 0}
+    - target: {fileID: 215888410945722352, guid: 40a1dd4240dabf8488bb56aaddecbc96,
+        type: 2}
+      propertyPath: m_IntensityMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177907281686584, guid: 40a1dd4240dabf8488bb56aaddecbc96, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a1dd4240dabf8488bb56aaddecbc96, type: 2}
   m_IsPrefabAsset: 0
